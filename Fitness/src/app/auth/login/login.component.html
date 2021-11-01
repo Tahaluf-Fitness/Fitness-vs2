@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<div class="box-form" style="margin-top: 40px; margin-bottom: 40px;"  >
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello Friend.</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Curabitur et est sed felis aliquet sollicitudin</p>
+
+		</div>
+	</div>
+
+
+		<div class="right">
+		<p>Don't have an account? <span class="span" >Creat Your Account</span> it takes less than a minute</p>
+			<form [formGroup]="loginForm" (submit)="submit()" >
+				<mat-form-field class="example-full-width">
+				    <mat-label class="label2">Email</mat-label>
+				    <input type="email"  matInput formControlName="emailControl" placeholder="Ex. pat@example.com">
+				    <mat-error *ngIf="loginForm.controls.emailControl.hasError('email') && !loginForm.controls.emailControl.hasError('required')">
+				      Please enter a valid email address
+				    </mat-error>
+				     <mat-error *ngIf="loginForm.controls.emailControl.hasError('required')">
+				      Email is <strong>required</strong>
+				    </mat-error>
+				  </mat-form-field>
+          <br>
+          <br>
+
+
+				  <mat-form-field class="example-full-width">
+				      <mat-label class="label2">Password</mat-label>
+				      <input type="password"  type="password" matInput formControlName="passwordControl" >
+				      <mat-error *ngIf="loginForm.controls.passwordControl.hasError('minlength') && !loginForm.controls.passwordControl.hasError('required')">
+				       Please Enter Strong Password
+				      </mat-error>
+				      <mat-error *ngIf="loginForm.controls.passwordControl.hasError('required')">
+				        Password is <strong>required</strong>
+				      </mat-error>
+				    </mat-form-field>
+
+
+
+			<br><br>
+
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<p>forget password?</p>
+		</div>
+
+			<br>
+      <div class="row justify-content-center align-items-center">
+        <button type="submit" [disabled]="!loginForm.valid" >Login</button>
+
+      </div>
+</form>
+</div>
+
+
+
+</div>
+
+<app-footer></app-footer>
