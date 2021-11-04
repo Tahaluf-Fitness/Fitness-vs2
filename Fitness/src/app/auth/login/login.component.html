@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 
 <div class="box-form" style="margin-top: 40px; margin-bottom: 40px;"  >
 	<div class="left">
@@ -12,7 +11,7 @@
 
 
 		<div class="right">
-		<p>Don't have an account? <span class="span" >Creat Your Account</span> it takes less than a minute</p>
+		<p>Don't have an account? <span class="span" (click)='goToSignUp()'>Creat Your Account</span> it takes less than a minute</p>
 			<form [formGroup]="loginForm" (submit)="submit()" >
 				<mat-form-field class="example-full-width">
 				    <mat-label class="label2">Email</mat-label>
@@ -45,10 +44,8 @@
 
 		<div class="remember-me--forget-password">
 				<!-- Angular -->
-	<label>
-		<input type="checkbox" name="item" checked/>
+		<input type="checkbox" name="item" (click)="remmember()" />
 		<span class="text-checkbox">Remember me</span>
-	</label>
 			<p>forget password?</p>
 		</div>
 

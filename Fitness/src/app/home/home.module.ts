@@ -28,6 +28,9 @@ import { ContactComponent } from './contact/contact.component';
     CommonModule,
     HomeRoutingModule,
     SharedModule
+  ],
+  exports:[
+    ContactComponent
   ]
 })
 export class HomeModule { }
