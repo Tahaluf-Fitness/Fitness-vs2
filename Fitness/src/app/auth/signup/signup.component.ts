@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit {
       1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,
       2000,2001,2002,2003,2004,2005,2006,2007,2008,2009
       ];
-  constructor() { }
+  constructor(private router:Router) { }
 
   registerForm: FormGroup = new FormGroup({
     UserName: new FormControl('', [Validators.required]),
@@ -47,6 +48,10 @@ export class SignupComponent implements OnInit {
       console.log(this.registerForm.controls);
     }
   ngOnInit(): void {
+  }
+
+  goToSignIn(){
+    this.router.navigate(['security/signin'])
   }
 
 }

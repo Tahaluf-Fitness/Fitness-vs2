@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() {
+  constructor(private router:Router) {
  
    }
 
@@ -26,13 +27,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  right_panel_active = false;
+  remmember(){
+    const formValue = this.loginForm.value;
 
-  toggleClass=(()=>{
-    this.right_panel_active=!this.right_panel_active
+    
+
+    localStorage.setItem('data', JSON.stringify(formValue));
 
 
-  });
+  }
+
+  goToSignUp(){
+    this.router.navigate(['security/signup'])
+  }
   
 
 
