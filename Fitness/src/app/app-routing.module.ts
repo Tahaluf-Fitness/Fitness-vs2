@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusModule } from './aboutus/aboutus.module';
+import { ClientModule } from './client/client.module';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path:'aboutus',
     loadChildren :()=>AboutusModule
 
+  },
+  {
+    path:'client',
+    loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule)
   }
   
   
