@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusModule } from './aboutus/aboutus.module';
+import { AdminModule } from './admin/admin.module';
 import { ClientModule } from './client/client.module';
 
 const routes: Routes = [
@@ -23,6 +24,9 @@ const routes: Routes = [
   {
     path:'client',
     loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule)
+  },
+  {
+    path:"admin", loadChildren:()=>AdminModule
   },
   {
     path:'contact',
