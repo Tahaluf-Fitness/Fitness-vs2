@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private spinner:NgxSpinnerService) {
  
    }
 
@@ -29,12 +30,7 @@ export class LoginComponent implements OnInit {
   }
   remmember(){
     const formValue = this.loginForm.value;
-
-    
-
     localStorage.setItem('data', JSON.stringify(formValue));
-
-
   }
 
   goToSignUp(){

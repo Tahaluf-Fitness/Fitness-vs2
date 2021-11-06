@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -17,43 +16,32 @@ export class AsideComponent implements OnInit {
 
   goToProfile(){
     this.spinner.show()
-
     setTimeout(()=>{
-      this.router.navigate(['client'])
+      this.router.navigate(['accountant'])
       this.spinner.hide();
- },500); 
-
+ },700); 
   }
 
-  goToMeasurments(){
+  goToUsers(){
     this.spinner.show()
-
     setTimeout(()=>{
-      this.router.navigate(['client/measurments'])
+      this.router.navigate(['accountant/users'])
       this.spinner.hide();
- },500); 
-
-
+ },700); 
   }
-
-  goToDiets(){
+  goToEmployees(){
     this.spinner.show()
-
     setTimeout(()=>{
-      this.router.navigate(['client/diet'])
+      this.router.navigate(['accountant/employees'])
       this.spinner.hide();
- },500); 
-
+ },700); 
   }
-
-  goToCompetitions(){
-    this.spinner.show()
-
-    setTimeout(()=>{
-      this.router.navigate(['client/competitions'])
-      this.spinner.hide();
- },500); 
-
+  goToReports(){
+       this.spinner.show()
+       setTimeout(()=>{
+        this.router.navigate(['accountant/reports'])
+        this.spinner.hide();
+    },700); 
   }
 
 }

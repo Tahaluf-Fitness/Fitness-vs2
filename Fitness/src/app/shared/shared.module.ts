@@ -13,6 +13,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { AppComponent } from '../app.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { AppComponent } from '../app.component';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxSpinnerModule
     
   ],
   exports:[
@@ -49,7 +53,8 @@ import { AppComponent } from '../app.component';
     MatCardModule,
     MatGridListModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NgxSpinnerModule
     ]
 
   

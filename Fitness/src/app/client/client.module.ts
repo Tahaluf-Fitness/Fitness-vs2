@@ -23,14 +23,7 @@ import { CompetitionsComponent } from './competitions/competitions.component';
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule,
-    
-
-    
-  ],exports:[
-    AsideComponent,
-    BoxesComponent,
-    NavComponent
+    ClientRoutingModule    
   ]
 })
 export class ClientModule { }
