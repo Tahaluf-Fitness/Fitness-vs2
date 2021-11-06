@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DietsComponent } from './diets/diets.component';
 import { MeasurmentsComponent } from './measurments/measurments.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
+import { FotComponent } from './components/fot/fot.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CompetitionsComponent } from './competitions/competitions.component';
     ProfileComponent,
     DietsComponent,
     MeasurmentsComponent,
-    CompetitionsComponent
+    CompetitionsComponent,
+    FotComponent
   ],
   imports: [
     CommonModule,
