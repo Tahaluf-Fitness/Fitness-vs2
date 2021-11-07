@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusModule } from './aboutus/aboutus.module';
 import { AdminModule } from './admin/admin.module';
-import { ClientModule } from './client/client.module';
+import { AutheraizationGuard } from './autheraization.guard';
 
 const routes: Routes = [
   {
@@ -23,21 +23,34 @@ const routes: Routes = [
   },
   {
     path:'client',
-    loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule)
+    loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule),
+    // canActivate :[AutheraizationGuard]
+
   },
   {
-    path:"admin", loadChildren:()=>AdminModule
+    path:"admin", loadChildren:()=>AdminModule,
+    // canActivate :[AutheraizationGuard]
+
   },
   {
     path:'contact',
     loadChildren :()=> import('./contactus/contactus.module').then ((m)=>m.ContactusModule)
+  },
+  {
+    path:'accountant',
+    loadChildren :()=> import('./accountant/accountant.module').then ((m)=>m.AccountantModule),
+    // canActivate :[AutheraizationGuard]
+
   }
   
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled'
+    })
+  ],  exports: [RouterModule]
 })
 export class AppRoutingModule { }

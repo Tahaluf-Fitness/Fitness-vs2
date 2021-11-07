@@ -13,6 +13,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { AppComponent } from '../app.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +42,13 @@ import { AppComponent } from '../app.component';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxSpinnerModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule
+    
+
     
   ],
   exports:[
@@ -49,7 +64,13 @@ import { AppComponent } from '../app.component';
     MatCardModule,
     MatGridListModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NgxSpinnerModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    
+
     ]
 
   
