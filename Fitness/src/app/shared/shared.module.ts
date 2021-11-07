@@ -14,6 +14,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { AppComponent } from '../app.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
+
+
 
 
 
@@ -37,7 +43,12 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MatIconModule,
     MatCardModule,
     MatGridListModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule
+    
+
     
   ],
   exports:[
@@ -54,7 +65,12 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MatGridListModule,
     NavbarComponent,
     FooterComponent,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    
+
     ]
 
   

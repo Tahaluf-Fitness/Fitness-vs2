@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { SignupComponent } from './signup/signup.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-// import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
     CommonModule,
     AuthRoutingModule,
     MatDatepickerModule,
-    // MatFormFieldModule,
+    MatFormFieldModule,
     MatSelectModule,
     SharedModule
   ]

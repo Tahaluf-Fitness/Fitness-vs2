@@ -1,16 +1,15 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-aside',
-  templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.css']
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.css']
 })
-export class AsideComponent implements OnInit {
+export class LayoutComponent implements OnInit {
 
-  constructor(private router:Router,private spinner:NgxSpinnerService) { }
+  constructor( private router:Router,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -56,4 +55,8 @@ export class AsideComponent implements OnInit {
 
   }
 
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
 }

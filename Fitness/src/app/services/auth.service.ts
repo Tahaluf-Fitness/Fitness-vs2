@@ -15,18 +15,18 @@ export class AuthService {
   email=new FormControl('');
   password=new FormControl('');
 
-  submit(){
-    const emailcontrol=this.email.value;
-    const passwordControl=this.password.value;
-    this.spinner.show() 
-    console.log(emailcontrol,passwordControl);
+//   submit(){
+//     const emailcontrol=this.email.value;
+//     const passwordControl=this.password.value;
+//     this.spinner.show() 
+//     console.log(emailcontrol,passwordControl);
 
-    setTimeout(()=>{
-      this.router.navigate(['client'])
-      this.spinner.hide();
- },700); 
+//     setTimeout(()=>{
+//       this.router.navigate(['client'])
+//       this.spinner.hide();
+//  },700); 
 
-  }
+//   }
 
   remmember(){
     const emailcontrol=this.email.value;
@@ -38,37 +38,49 @@ export class AuthService {
     localStorage.setItem('data', JSON.stringify(data));
   }
 
-  // submit(){
-  //   var body={
-  //     username:this.email.value.toString(),
-  //     password:this.password.value.toString()
-  //   };
-       
-  //   const headerDict={
-  //     'Content-Type':'application/json',
-  //     'Accept':'application/json'
-  //   }
-  //   const requestOptions={
-  //     headers:new HttpHeaders(headerDict)
-  //   }
-  //   this.spinner.show();
-  //   var responce1:any;
-  //   this.http.post('https://localhost:44303/api/jwt',body,requestOptions).subscribe((res)=>{
-  //     responce1=res;
-  //     const responce={
-  //      token:responce1.toString()
-  //     }
-  //     localStorage.setItem('token',responce.token)
-  //     let data:any=jwtDecode(responce.token);
-  //     localStorage.setItem('user',JSON.stringify({...data}));
-  //     if(data.role=='client'){
-  //       this.router.navigate(['client']);
-  //     }
-  //     else if(data.role=='accountant'){
-  //       this.router.navigate(['accountant']);
-  //     }
+ 
 
-  //   })
-  //   this.spinner.hide();
-  // }
+  submit(){
+
+    var responce1:any;
+    var body={
+      email:this.email.value.toString(),
+      password:this.password.value.toString()
+    };
+    const headerDict={
+      'Content-Type':'application/json',
+      'Accept':'application/json'
+    }
+    const requestOptions={
+      headers:new HttpHeaders(headerDict)
+    }
+    console.log(body);
+      this.spinner.show();
+      setTimeout(()=>{
+        this.http.post('https://localhost:44303/api/jwt',body,requestOptions).subscribe((res:any)=>{
+          this.spinner.hide()
+          responce1=res;
+          const responce={
+            token:responce1.toString()};
+            localStorage.setItem('token',responce.token);
+            let data:any=jwtDecode(responce.token);//username: rolename
+            console.log(data);
+            //var str=JSON.stringify({...data});
+         localStorage.setItem('user',JSON.stringify({...data}));
+           if(data.role=='admin'){
+             this.router.navigate(['admin']);
+           }
+           else if(data.role=='accountant'){
+            this.router.navigate(['accountant']);
+          }
+           else if(data.role=='client'){
+             this.router.navigate(['client']);
+           }
+           
+          })
+              this.spinner.hide();
+         },700); 
+
+     
+    }
 }
