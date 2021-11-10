@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -79,7 +79,7 @@ export class AuthService {
            
           })
               this.spinner.hide();
-         },700); 
+         },400); 
 
      
     }
