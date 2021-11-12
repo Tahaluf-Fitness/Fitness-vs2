@@ -61,7 +61,8 @@ export class AuthService {
           this.spinner.hide()
           responce1=res;
           const responce={
-            token:responce1.toString()};
+            token:responce1.toString()
+          };
             localStorage.setItem('token',responce.token);
             let data:any=jwtDecode(responce.token);//username: rolename
             console.log(data);
@@ -82,5 +83,13 @@ export class AuthService {
          },400); 
 
      
+    }
+
+    getCurrentUser(){
+      const tokenString = localStorage.getItem('token') || 'invalid token';
+      let token:any=jwtDecode(tokenString);
+      let id:number = parseInt(token.UserID)
+      return id
+      
     }
 }
