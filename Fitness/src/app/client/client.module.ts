@@ -8,6 +8,9 @@ import { MeasurmentsComponent } from './measurments/measurments.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
+import { MeasTableComponent } from './measurments/meas-table/meas-table.component';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import { SharedModule } from '../shared/shared.module';
     DietsComponent,
     MeasurmentsComponent,
     CompetitionsComponent,
-    LayoutComponent
+    LayoutComponent,
+    MeasTableComponent
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
-    SharedModule  
+    SharedModule
+    
+   
   ]
 })
 export class ClientModule { }

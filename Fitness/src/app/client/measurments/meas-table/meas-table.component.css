@@ -1,0 +1,80 @@
+.demo-table {
+  width: 75%;
+}
+
+th {
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.mat-column-height {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-weight {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-bmi {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-bicepsWidth {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-thighWidth {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+.mat-column-chest {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+.mat-column-waist {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+.mat-column-date {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+.mat-column-shoulder {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+.mat-column-shoulder {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 2px solid transparent;
+
+  border-top: 3px solid transparent;
+
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+import { MeasurementService } from 'src/app/services/measurement.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+
+
 
 @Component({
   selector: 'app-measurments',
@@ -6,10 +15,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./measurments.component.css']
 })
 export class MeasurmentsComponent implements OnInit {
+  constructor(public measS: MeasurementService,public tostr:ToastrService,
+    private spiner:NgxSpinnerService,public router:Router) { }
 
-  constructor() { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  complaintsTable=this.measS.data;
 
   ngOnInit(): void {
+    this.getData()
   }
 
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.complaintsTable.paginator = this.paginator;
+  }
+
+  getData(){
+    this.measS.GetMeasurementByUserID()
+     
 }
+
+
+}
+
+

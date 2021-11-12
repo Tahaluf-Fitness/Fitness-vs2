@@ -17,11 +17,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from '@angular/common/http';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-
-
-
-
-
+import {MatTableModule} from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -46,10 +43,9 @@ import {MatListModule} from '@angular/material/list';
     NgxSpinnerModule,
     HttpClientModule,
     MatSidenavModule,
-    MatListModule
-    
-
-    
+    MatListModule,
+    MatTableModule,
+    MatTabsModule
   ],
   exports:[
     CommonModule,
@@ -69,8 +65,8 @@ import {MatListModule} from '@angular/material/list';
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    
-
+    MatTableModule,
+    MatTabsModule
     ]
 
   
