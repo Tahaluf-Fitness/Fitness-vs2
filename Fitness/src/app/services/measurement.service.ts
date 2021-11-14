@@ -17,10 +17,10 @@ constructor(private spinner:NgxSpinnerService,private router:Router,private http
  
 
 
-id:number=this.authS.getCurrentUser()
+// id:number=this.authS.getCurrentUser()
 
 GetMeasurementByUserID(){
- this.http.get('https://localhost:44303/api/Measurement/my-measurements/'+this.id).subscribe((res=>{
+ this.http.get('https://localhost:44303/api/Measurement/my-measurements/'+1).subscribe((res=>{
    this.data=res;
  }))
 }
