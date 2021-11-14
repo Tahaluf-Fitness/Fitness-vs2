@@ -85,11 +85,5 @@ export class AuthService {
      
     }
 
-    getCurrentUser(){
-      const tokenString = localStorage.getItem('token') || 'invalid token';
-      let token:any=jwtDecode(tokenString);
-      let id:number = parseInt(token.UserID)
-      return id
-      
-    }
+    
 }
