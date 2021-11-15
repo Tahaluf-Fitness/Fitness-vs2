@@ -21,8 +21,10 @@ constructor(private spiner:NgxSpinnerService,private router:Router,private http:
 
 userID:number=this.authS.getCurrentUser()
 
+
+
 GetMeasurementByUserID(){
- this.http.get('https://localhost:44303/api/Measurement/my-measurements/'+this.userID).subscribe((res=>{
+ this.http.get('https://localhost:44303/api/Measurement/my-measurements/'+1).subscribe((res=>{
    this.data=res;
    this.toastr.success('Data retrieved Successfully');
 
