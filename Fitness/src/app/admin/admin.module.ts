@@ -18,6 +18,9 @@ import { MessageComponent } from './message/message.component';
 import { ReviewtoadmComponent } from './reviewtoadm/reviewtoadm.component';
 import { TestimonialsforadmComponent } from './testimonialsforadm/testimonialsforadm.component';
 import { WebinfoadmComponent } from './webinfoadm/webinfoadm.component';
+import { UsersTableComponent } from './users/users-table/users-table.component';
+import { EmployeeTableComponent } from './employees/employee-table/employee-table.component';
+import { DietTableComponent } from './dietcategory/diet-table/diet-table.component';
 
 
 
@@ -36,6 +39,9 @@ import { WebinfoadmComponent } from './webinfoadm/webinfoadm.component';
     ReviewtoadmComponent,
     TestimonialsforadmComponent,
     WebinfoadmComponent,
+    UsersTableComponent,
+    EmployeeTableComponent,
+    DietTableComponent,
 
   ],
   imports: [

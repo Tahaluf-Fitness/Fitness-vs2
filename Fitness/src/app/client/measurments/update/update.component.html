@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Update Measurment</h2>
+<mat-dialog-content class="mat-typography">
+          <form [formGroup]="formGroup">
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Height</mat-label>
+                              <input matInput formControlName="height" style="font-size: x-large;"[(ngModel)]="height">
+                              
+
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Weight</mat-label>
+                              <input matInput formControlName="weight" style="font-size: x-large;" [(ngModel)]="weight">
+
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Biceps</mat-label>
+                              <input matInput formControlName="bicepsWidth" style="font-size: x-large;" [(ngModel)]="bicepsWidth">
+                    </mat-form-field>
+                    <br>
+
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Thigh Width</mat-label>
+                              <input type="text" matInput formControlName="thighWidth" style="font-size: x-large;" [(ngModel)]="thighWidth">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Chest</mat-label>
+                              <input type="text" matInput formControlName="chest" style="font-size: x-large;" [(ngModel)]="chest">
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Shoulder</mat-label>
+                              <input type="text" matInput formControlName="shoulder" style="font-size: x-large;" [(ngModel)]="shoulder">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Waist</mat-label>
+                              <input type="text" matInput formControlName="waist" style="font-size: x-large;" [(ngModel)]="waist">
+                    </mat-form-field>
+          </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial
+                    (click)="saveItem()">Save</button>
+</mat-dialog-actions>

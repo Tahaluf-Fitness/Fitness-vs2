@@ -10,6 +10,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { MeasTableComponent } from './measurments/meas-table/meas-table.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { UpdateComponent } from './measurments/update/update.component';
+import { DietTableComponent } from './diets/diet-table/diet-table.component';
+import { CreateComponent } from './measurments/create/create.component';
 
 
 
@@ -20,7 +23,10 @@ import { MatPaginator } from '@angular/material/paginator';
     MeasurmentsComponent,
     CompetitionsComponent,
     LayoutComponent,
-    MeasTableComponent
+    MeasTableComponent,
+    UpdateComponent,
+    DietTableComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,

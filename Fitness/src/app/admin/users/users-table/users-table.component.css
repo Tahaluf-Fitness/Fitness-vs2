@@ -1,0 +1,76 @@
+.demo-table {
+          width: 75%;
+        }
+        
+        th {
+          font-size: 20px;
+          text-align: center;
+        
+        }
+        
+        .mat-column-username {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-firstName {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-lastName {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-email {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-gender {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        .mat-column-phoneNumber1 {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        .mat-column-dateOfBirth {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        .mat-column-country {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        .mat-column-city {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+      
+        
+        .mat-row .mat-cell {
+          border-bottom: 2px solid transparent;
+        
+          border-top: 3px solid transparent;
+        
+        }
+        
+        .mat-row:hover .mat-cell {
+          border-color: currentColor;
+        }
+        
+        .demo-row-is-clicked {
+          font-weight: bold;
+        }
+        

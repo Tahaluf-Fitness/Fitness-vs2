@@ -5,6 +5,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { MeasurementService } from 'src/app/services/measurement.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -16,7 +18,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class MeasurmentsComponent implements OnInit {
   constructor(public measS: MeasurementService,public tostr:ToastrService,
-    private spiner:NgxSpinnerService,public router:Router) { }
+    private spiner:NgxSpinnerService,public router:Router,public dialog:MatDialog) { }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   complaintsTable=this.measS.data;
@@ -31,8 +33,12 @@ export class MeasurmentsComponent implements OnInit {
   }
 
   getData(){
-    this.measS.GetMeasurementByUserID()
-     
+    this.measS.GetMeasurementByUserID()   
+}
+
+addMeasurment(){
+  this.dialog.open(CreateComponent)
+
 }
 
 
