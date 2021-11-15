@@ -1,0 +1,40 @@
+      <div class="row align-items-center justify-content-center">
+          <table mat-table [dataSource]="reportsS.data2" class="mat-elevation-z8 demo-table">
+                <ng-container matColumnDef="reportDate">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.reportDate}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dietFile">
+                      <th mat-header-cell *matHeaderCellDef> File </th>
+                      <td mat-cell *matCellDef="let element"> {{element.dietFile}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dietPeriod">
+                      <th mat-header-cell *matHeaderCellDef> Period </th>
+                      <td mat-cell *matCellDef="let element"> {{element.dietPeriod}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="actualprice">
+                      <th mat-header-cell *matHeaderCellDef> Actual price </th>
+                      <td mat-cell *matCellDef="let element"> {{element.actualprice}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="customerPrice">
+                      <th mat-header-cell *matHeaderCellDef> Customer Price </th>
+                      <td mat-cell *matCellDef="let element"> {{element.customerPrice}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="categoryName">
+                      <th mat-header-cell *matHeaderCellDef> Category </th>
+                      <td mat-cell *matCellDef="let element"> {{element.categoryName}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+                <tr class="mat-row" *matNoDataRow>
+                      <td class="mat-cell" colspan="4">You don't have Measurements</td>
+                </tr>
+          </table>
+          <div>

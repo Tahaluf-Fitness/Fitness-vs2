@@ -1,0 +1,55 @@
+.demo-table {
+          width: 75%;
+        }
+        
+        th {
+          font-size: 20px;
+          text-align: center;
+        
+        }
+        
+        .mat-column-Date {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-File {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-Period {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-Price {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-Category {
+          width: 32px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-row .mat-cell {
+          border-bottom: 2px solid transparent;
+        
+          border-top: 3px solid transparent;
+        
+        }
+        
+        .mat-row:hover .mat-cell {
+          border-color: currentColor;
+        }
+        
+        .demo-row-is-clicked {
+          font-weight: bold;
+        }
+        

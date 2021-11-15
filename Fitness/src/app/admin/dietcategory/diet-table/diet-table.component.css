@@ -1,0 +1,60 @@
+.demo-table {
+          width: 50%;
+        }
+        
+        th {
+          font-size: 15px;
+          text-align: center;
+        
+        }
+        
+        .mat-column-reportDate {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-dietFile {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-dietPeriod {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-actualprice {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-column-customerPrice {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        .mat-column-categoryName {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+        
+        .mat-row .mat-cell {
+          border-bottom: 2px solid transparent;
+        
+          border-top: 3px solid transparent;
+        
+        }
+        
+        .mat-row:hover .mat-cell {
+          border-color: currentColor;
+        }
+        
+        .demo-row-is-clicked {
+          font-weight: bold;
+        }
+        

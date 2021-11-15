@@ -19,6 +19,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   exports:[
     CommonModule,
@@ -66,7 +70,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
     ]
 
   
