@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,50 +11,79 @@ import { Router } from '@angular/router';
  
 })
 export class SignupComponent implements OnInit {
-   Day: Array<string> = [
-  '1','2','3','4','5','6','7','8','9','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'
-  ];
-  Month: number[] = [
-    1,2,3,4,5,6,7,8,9,10,11,12
-    ];
 
-    Year: number[] = [
-      1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,
-      1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,
-      1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,
-      2000,2001,2002,2003,2004,2005,2006,2007,2008,2009
-      ];
-  constructor(private router:Router) { }
+  constructor(private router:Router,private elementRef: ElementRef,private spiner:NgxSpinnerService,private toastr:ToastrService,private http:HttpClient) { }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument
+       .body.style.backgroundColor = '#63738a';
+ }
 
-  registerForm: FormGroup = new FormGroup({
-    UserName: new FormControl('', [Validators.required]),
-    FirstName: new FormControl('', [Validators.required]),
-    LastName: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, 
-    Validators.email]),
-    password: new FormControl('', [Validators.required, 
-    Validators.minLength(8)]),
-    Confirmpassword: new FormControl('', [Validators.required, 
-      Validators.minLength(8)]),
-      Gender: new FormControl('', [Validators.required]),
-       phoneNumber: new FormControl(''),
-       Dayy: new FormControl('', [Validators.required]),
-       Monthh: new FormControl('', [Validators.required]),
-       Yearr: new FormControl('', [Validators.required]),
-       Country: new FormControl('', [Validators.required]),
-       City: new FormControl('', [Validators.required]),
-   
-       JoinDate: new FormControl('', [Validators.required])
-    })
+ ngOnInit(): void {
+}
 
-    submit(){
-      console.log(this.registerForm.controls);
-    }
-  ngOnInit(): void {
+formGroup =new FormGroup({
+  firstName:new FormControl('',Validators.required),
+  lastName:new FormControl('',Validators.required),
+  password: new FormControl('', [Validators.required,  Validators.minLength(8)]),
+  confirmpassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+  email: new FormControl('', [Validators.required, Validators.email]), 
+  gender:new FormControl('',Validators.required),
+  dateOfBirth:new FormControl('')
+})
+
+addUser(data:any){
+  this.spiner.show();
+  this.http.post('https://localhost:44303/api/user/',data).subscribe((res:any)=>{
+    this.toastr.success('User created successfuly');
+    this.spiner.hide();
+    window.location.reload();
+    this.router.navigate(['security/signin'])
+
+
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('User not created');
+
+  })
+  
+}
+
+firstName1:any;
+lastName1:any;
+email1:any;
+gender1:any;
+dateOfBirth1:Date | undefined
+password1:any
+confirmpassword1:any
+roleID=4
+
+saveItem(){
+  this.firstName1=this.formGroup.value.firstName;
+  this.lastName1=this.formGroup.value.lastName;
+  this.email1=this.formGroup.value.email;
+  this.gender1=this.formGroup.value.gender;
+  this.dateOfBirth1=this.formGroup.value.dateOfBirth;
+  this.password1=this.formGroup.value.password
+  this.confirmpassword1=this.formGroup.value.confirmpassword
+
+  const data={
+    firstName:this.firstName1.toString(),
+    lastName:this.lastName1.toString(),
+    email:this.email1.toString(),
+    gender:this.gender1.toString(),
+    password:this.password1.toString(),
+    confirmpassword:this.confirmpassword1.toString(),
+    dateOfBirth:this.dateOfBirth1,
+    roleID:this.roleID
   }
+
+  this.addUser(data);
+debugger
+}
+
 
   goToSignIn(){
     this.router.navigate(['security/signin'])
   }
-
 }

@@ -21,6 +21,8 @@ import { WebinfoadmComponent } from './webinfoadm/webinfoadm.component';
 import { UsersTableComponent } from './users/users-table/users-table.component';
 import { EmployeeTableComponent } from './employees/employee-table/employee-table.component';
 import { DietTableComponent } from './dietcategory/diet-table/diet-table.component';
+import { CreateComponent } from './employees/create/create.component';
+import { CardsComponent } from './message/cards/cards.component';
 
 
 
@@ -42,6 +44,8 @@ import { DietTableComponent } from './dietcategory/diet-table/diet-table.compone
     UsersTableComponent,
     EmployeeTableComponent,
     DietTableComponent,
+    CreateComponent,
+    CardsComponent,
 
   ],
   imports: [

@@ -1,5 +1,10 @@
-.example-spacer {
-          flex: 1 1 auto;
+.example-card {
+          max-width: 400px;
+        }
+        
+        .example-header-image {
+          background-image: url('https://www.avenga.com/wp-content/uploads/2020/11/C-Sharp.png');
+          background-size: cover;
         }
         .container {
           width: 98%;

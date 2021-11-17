@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
    }
    ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
-       .body.style.backgroundColor = '#f45b69';
+       .body.style.backgroundColor = '#63738a';
  }
 
 

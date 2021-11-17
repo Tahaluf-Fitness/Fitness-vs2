@@ -48,5 +48,18 @@ export class UsersService {
       }))
      }
 
+     addEmployee(data:any){
+      this.spiner.show();
+      this.http.post('https://localhost:44303/api/user/',data).subscribe((res:any)=>{
+        this.toastr.success('Created');
+        this.spiner.hide();
     
+      },err=>{
+       this.spiner.hide();
+       this.toastr.error('Not Created');
+    
+      })
+
+    
+}
 }
