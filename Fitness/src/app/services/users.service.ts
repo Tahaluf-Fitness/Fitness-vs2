@@ -32,12 +32,13 @@ export class UsersService {
     .subscribe((data:any)=>{
       this.spiner.hide();
       this.toastr.success('Deleted');
+      window.location.reload();
+
     
     },err=>{
       this.spiner.hide();
       this.toastr.warning('This item cannot be deleted')
     })
-    window.location.reload();    
     }
 
     GetAllEmployees(){
@@ -53,6 +54,8 @@ export class UsersService {
       this.http.post('https://localhost:44303/api/user/',data).subscribe((res:any)=>{
         this.toastr.success('Created');
         this.spiner.hide();
+        window.location.reload();
+
     
       },err=>{
        this.spiner.hide();

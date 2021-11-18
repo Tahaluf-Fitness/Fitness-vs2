@@ -56,7 +56,6 @@ export class CreateComponent implements OnInit {
       firstName:this.firstName1.toString(),
       lastName:this.lastName1.toString(),
       email:this.email1.toString(),
-
       gender:this.gender1.toString(),
       phoneNumber1:parseInt(this.phoneNumber2),
       password:this.password,

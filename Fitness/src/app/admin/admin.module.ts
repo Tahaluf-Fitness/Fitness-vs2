@@ -23,6 +23,7 @@ import { EmployeeTableComponent } from './employees/employee-table/employee-tabl
 import { DietTableComponent } from './dietcategory/diet-table/diet-table.component';
 import { CreateComponent } from './employees/create/create.component';
 import { CardsComponent } from './message/cards/cards.component';
+import { CardsreComponent } from './reviewtoadm/cardsre/cardsre.component';
 
 
 
@@ -46,6 +47,7 @@ import { CardsComponent } from './message/cards/cards.component';
     DietTableComponent,
     CreateComponent,
     CardsComponent,
+    CardsreComponent,
 
   ],
   imports: [

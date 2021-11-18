@@ -13,6 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { UpdateComponent } from './measurments/update/update.component';
 import { DietTableComponent } from './diets/diet-table/diet-table.component';
 import { CreateComponent } from './measurments/create/create.component';
+import { FormComponent } from './profile/form/form.component';
 
 
 
@@ -26,7 +27,8 @@ import { CreateComponent } from './measurments/create/create.component';
     MeasTableComponent,
     UpdateComponent,
     DietTableComponent,
-    CreateComponent
+    CreateComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

@@ -1,12 +1,9 @@
-#schedule {
-          padding: 0px 0px 140px 0px;
-          background-image: url(../../../assets/images/fflo.jpg);
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
+/* #schedule {
+          padding: 0px 0px 50px 0px;
+          
+        } */
         
-        #schedule table {
+        /* #schedule table {
           width: 100%;
           text-align: center;
           border: 1px solid #fff;
@@ -162,5 +159,52 @@
         
         .dark-bg p {
           color: #fff;
+        } */
+        
+
+        /* .carousel .owl-carousel .owl-item img {
+          width: auto;
+          margin-top: 2rem;
+
         }
         
+        .carousel .author-img {
+          width: 100%;
+          top: 0;
+        }
+        
+          .carousel .author-img img {
+              width: 8rem !important;
+              height: auto;
+              border-radius: 100%;
+          }
+        
+        .carousel p {
+          font-size: 1.25rem;
+          line-height: 2rem;
+          color: chocolate;
+        }
+        
+        .carousel .testi-heading {
+          font-weight: 700;
+        }
+        
+        .carousel .hh {
+          letter-spacing: 5px;
+        }
+        
+        .carousel {
+          box-shadow: 0 0 50px #FBF37C;
+          border-radius: 20px;
+          margin: 4rem 0;
+          height: 22rem;
+        }
+        
+        .carousel-indicators button{
+          background-color: #999;
+          background-color: rgba(70, 70, 70, 0.25);
+        }
+        
+        .carousel-indicators .active {
+          background-color: #444;
+        } */
