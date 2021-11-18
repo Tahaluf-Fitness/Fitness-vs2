@@ -75,15 +75,10 @@ export class UpdateComponent implements OnInit {
       shoulder:parseInt(this.shoulder2),
       userId:this.authS.getCurrentUser(),
       dateOfMeasurement:this.dateOfMeasurement
-
-       
-
     }
     this.id=parseInt(this.id);
     this.measS.update(this.id,data2);
-
-
-
+    window.location.reload();
   }
 
 }

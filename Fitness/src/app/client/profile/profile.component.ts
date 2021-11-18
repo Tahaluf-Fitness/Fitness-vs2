@@ -13,50 +13,54 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  data:any =[{}]
+  // data:any =[{}]
 
-  @Input () firstName:string|undefined;
-  @Input () lastName:string|undefined;
-  @Input () username:number|undefined;
-  @Input () email:string|undefined;
-  @Input () phoneNumber1:number|undefined;
-  @Input () dateOfBirth:Date|undefined;
-  @Input () country:string|undefined;
-  @Input () city:string|undefined;
+  // @Input () firstName:string|undefined;
+  // @Input () lastName:string|undefined;
+  // @Input () username:number|undefined;
+  // @Input () email:string|undefined;
+  // @Input () phoneNumber1:number|undefined;
+  // @Input () dateOfBirth:Date|undefined;
+  // @Input () country:string|undefined;
+  // @Input () city:string|undefined;
 
   constructor(private router:Router,public profileS:ProfileService,private http:HttpClient,public authS:AuthService,private toastr:ToastrService) { 
 
   }
 
   ngOnInit(): void {
-  this.GetUserInfoByID()
+  this.getData()
   }
 
 
   
 
-formGroup =new FormGroup({
-  username:new FormControl(''),
-  firstName:new FormControl(''),
-  lastName:new FormControl(''),
-  email:new FormControl(''),
-  phoneNumber1:new FormControl(''),
-  dateOfBirth:new FormControl(''),
-  country:new FormControl(''),
-  city:new FormControl('')
+// formGroup =new FormGroup({
+//   username:new FormControl(''),
+//   firstName:new FormControl(''),
+//   lastName:new FormControl(''),
+//   email:new FormControl(''),
+//   phoneNumber1:new FormControl(''),
+//   dateOfBirth:new FormControl(''),
+//   country:new FormControl(''),
+//   city:new FormControl('')
 
-})
+// })
 
-userID:number=this.authS.getCurrentUser()
-GetUserInfoByID(){
- this.http.get('https://localhost:44303/api/user/profile/'+this.userID).subscribe((res=>{
-   this.data=res;
-   console.log(this.data)
+// userID:number=this.authS.getCurrentUser()
+// GetUserInfoByID(){
+//  this.http.get('https://localhost:44303/api/user/profile/'+this.userID).subscribe((res=>{
+//    this.data=res;
+//    console.log(this.data)
 
-   this.toastr.success('Data retrieved Successfully');
+//    this.toastr.success('Data retrieved Successfully');
 
- }))
+//  }))
 
+// }
+
+getData(){
+  this.profileS.GetUserInfoByID()
 }
 
 

@@ -3,7 +3,7 @@
           <table mat-table [dataSource]="this.reportS.data" class="mat-elevation-z8 demo-table">
                 <ng-container matColumnDef="Date">
                       <th mat-header-cell *matHeaderCellDef> Date </th>
-                      <td mat-cell *matCellDef="let element"> {{element.reportDate}} </td>
+                      <td mat-cell *matCellDef="let element"> {{element.reportDate |  date:'yyyy-MM-dd'}} </td>
                 </ng-container>
     
                 <ng-container matColumnDef="File">
@@ -36,7 +36,7 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
                 <tr class="mat-row" *matNoDataRow>
-                      <td class="mat-cell" colspan="4">You don't have Measurements</td>
+                      <td class="mat-cell" colspan="4">You don't have Reports</td>
                 </tr>
           </table>
           <!-- <mat-paginator pageSize="5" class="mat-elevation-z8" showFirstLastButtons></mat-paginator> -->

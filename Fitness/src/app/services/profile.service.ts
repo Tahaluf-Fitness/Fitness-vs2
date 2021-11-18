@@ -24,6 +24,21 @@ GetUserInfoByID(){
  }))
 
 }
-selectedData=new BehaviorSubject(this.data);
+
+update(id:number,data:any){
+  this.spiner.show();
+  let url='https://localhost:44303/api/user/update/'+id
+  this.http.put(url,data).subscribe((res:any)=>{
+    this.toastr.success('Info updated succsessfuly');
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Not Updated');
+   debugger
+
+  })
+
+}
 
 }

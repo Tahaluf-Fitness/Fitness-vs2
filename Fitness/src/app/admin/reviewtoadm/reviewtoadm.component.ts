@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-reviewtoadm',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewtoadmComponent implements OnInit {
 
-  constructor() { }
+  constructor(public reviewS:ReviewService) { }
 
   ngOnInit(): void {
+    this.reviewS.getUnCheckReview()
   }
 
 }

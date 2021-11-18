@@ -1,6 +1,6 @@
  <!-- ***** Call to Action Start ***** -->
  <section class="section" id="call-to-action">
-          <div class="container">
+          <!-- <div class="container">
               <div class="row">
                   <div class="col-lg-10 offset-lg-1">
                       <div class="cta-content">
@@ -12,6 +12,49 @@
                       </div>
                   </div>
               </div>
-          </div>
+          </div> -->
+
+          <div class="container d-flex justify-content-center" >
+            <div class="row ">
+                <div class="col">
+                    <div class="card rate-card">
+                        <div class="card-body text-center rate-card">
+                            <!-- <span class="myratings">@AvgRate</span> -->
+                            <h4 class="mt-1" style="font-size:large">Rate us</h4>
+                            <form [formGroup]="formGroup">
+                                <fieldset class="rating">
+
+                                        <input type="radio"  formControlName="reviewValue" onblur="" id="star5" name="reviewValue" value="5" />
+                                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+                                        <input type="radio"  formControlName="reviewValue" id="star4" name="reviewValue" value="4" />
+                                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+                                        <input type="radio"  formControlName="reviewValue" id="star3" name="reviewValue" value="3" />
+                                        <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+                                        <input type="radio"  formControlName="reviewValue" id="star2" name="reviewValue" value="2" />
+                                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                                        <input type="radio"  formControlName="reviewValue" id="star1" name="reviewValue" value="1" />
+                                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+                                        <div class="form-group ml-5">
+                                            <input type="text" matInput formControlName="name" class="form-control" name="name" id="name" placeholder="Name" data-rule="minlen:4" style="font-size:medium" />
+                                        </div>
+                                    <div class="form-group ml-5">
+                                        <textarea class="form-control" matInput formControlName="comment" name="comment" id="comment" rows="3" data-msg="Please write something for us" placeholder="Comment" style="font-size:medium"></textarea>
+                                    </div>
+                                    <div class="text-center ml-5">
+                                        <button id="btn" type="submit" class="main-button" (click)="saveReview()" [disabled]="!formGroup.valid" style="cursor: pointer;" >Save</button>
+                                    </div>
+                                    <span id="result" class="ml-3"></span>
+                                </fieldset>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </section>
-      <!-- ***** Call to Action End ***** -->

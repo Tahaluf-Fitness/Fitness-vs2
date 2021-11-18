@@ -1,5 +1,5 @@
-<section class="section" id="schedule">
-          <div class="container">
+<!-- <section class="section" id="schedule"> -->
+          <!-- <div class="container">
               <div class="row">
                   <div class="col-lg-6 offset-lg-3">
                       <div class="section-heading dark-bg">
@@ -61,5 +61,63 @@
                       </div>
                   </div>
               </div>
+          </div> -->
+
+          <!-- <div id="carouselExampleIndicators" class="carousel carousel-dark slide container mx-auto my-10  h-80" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let testimonial of this.reviewS.data" class="carousel-item"
+                 data-bs-interval="3000">
+          
+                <div class="bg-commo position-relative text-center">
+                  <div class="author-img mt-4">
+
+                  <div class="py-4 px-5 rounded">
+                    <p class="testi-text"><strong>{{testimonial.name}}!</strong><br /></p>
+                    <h4 class="testi-heading pt-1 mb-1">{{testimonial.name}}</h4>
+                    <p class="mb-1 small font-medium hh text-uppercase text-muted">Customer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
+
+
+          <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let testimonial of this.reviewS.data2" [ngClass]="{'active': testimonial.reviewId==8}">
+                  <img src="../../../assets/images/cta-bg.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5 class="py-2">{{testimonial.name}} </h5>
+                    <h5><span class="fa fa-star mr-3"></span>{{testimonial.reviewValue}}<span class="fa fa-star ml-3"></span>
+                    </h5>
+
+                    <p class="py-4">  {{testimonial.comment}} </p>
+                  </div>
+                </div>                              
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
-      </section>
+
+          

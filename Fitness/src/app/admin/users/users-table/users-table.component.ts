@@ -31,7 +31,6 @@ export class UsersTableComponent implements OnInit {
   }
 
   @Input () userId:number|undefined;
-  @Input () username:string|undefined;
   @Input () firstName:string|undefined;
   @Input () lastName:string|undefined;
   @Input () email:string|undefined;
@@ -41,7 +40,7 @@ export class UsersTableComponent implements OnInit {
   @Input () country:string|undefined;
   @Input () city:string|undefined;
 
-  displayedColumns: string[] = ['username','firstName', 'lastName', 'email','gender','phoneNumber1','dateOfBirth','country','city','delete'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'email','gender','phoneNumber1','dateOfBirth','country','city','delete'];
   clickedRows = new Set<PeriodicElement>();
 
 }
