@@ -20,6 +20,8 @@ import { CreateComponent } from './employees/create/create.component';
 import { CardsComponent } from './message/cards/cards.component';
 import { CardsreComponent } from './reviewtoadm/cardsre/cardsre.component';
 import { FormadComponent } from './adminprofile/formad/formad.component';
+import { ReportsComponent } from './reports/reports.component';
+import { ReportTableComponent } from './reports/report-table/report-table.component';
 
 
 
@@ -42,6 +44,8 @@ import { FormadComponent } from './adminprofile/formad/formad.component';
     CardsComponent,
     CardsreComponent,
     FormadComponent,
+    ReportsComponent,
+    ReportTableComponent,
 
   ],
   imports: [

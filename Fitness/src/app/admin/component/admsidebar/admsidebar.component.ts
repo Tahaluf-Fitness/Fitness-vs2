@@ -19,7 +19,10 @@ export class AdmsidebarComponent implements OnInit {
     this.router.navigate(['admin/users'])
   }
   dietfun(){
-    this.router.navigate(['admin/dietcat'])
+    this.router.navigate(['admin/users-reports'])
+  }
+  allReportsfun(){
+    this.router.navigate(['admin/all-reports'])
   }
   gotoemployee(){
     this.router.navigate(['admin/emp'])
@@ -33,9 +36,7 @@ export class AdmsidebarComponent implements OnInit {
   reviewfun(){
     this.router.navigate(['admin/rev'])
   }
-  testimonialsfun(){
-    this.router.navigate(['admin/testimonial'])
-  }
+ 
   webinfofun(){
     this.router.navigate(['admin/webinfo'])
   }

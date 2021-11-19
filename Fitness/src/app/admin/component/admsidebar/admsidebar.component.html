@@ -40,15 +40,15 @@
             
             </ul>
           </li> -->
-          <li class="nav-item has-treeview">
-            <a  class="nav-link">
-              <i class="nav-icon fa fa-book"></i>
-              <p>
-                Pages
-                <i class="fa fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
+          <li class="nav-item ">
+            
+            <ul class="nav-item ">
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa fa-users nav-icon"></i>
+                  <p style="cursor: pointer;" (click)="gotoptoprofile()">Profile</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link">
                   <i class="fa fa-users nav-icon"></i>
@@ -61,16 +61,16 @@
                   <p style="cursor: pointer;" (click)="gotoemployee()">Employees</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link">
-                  <i class="far fa-book nav-icon"></i>
-                  <p style="cursor: pointer;" (click)="gotocompetition()">Competitions</p>
-                </a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link">
                   <i class="fa fa-book nav-icon"></i>
-                  <p (click)="dietfun()" style="cursor:pointer">Diet Reports</p>
+                  <p (click)="allReportsfun()" style="cursor:pointer">Reports</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fa fa-book nav-icon"></i>
+                  <p (click)="dietfun()" style="cursor:pointer">Users' Reports</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -85,12 +85,7 @@
                   <p (click)="reviewfun()" style="cursor:pointer">Reviews</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link">
-                  <i class="fa fa-book nav-icon"></i>
-                  <p (click)="testimonialsfun()" style="cursor:pointer">Testimonials</p>
-                </a>
-              </li> -->
+             
               <li class="nav-item">
                 <a class="nav-link">
                   <i class="fa fa-envelope nav-icon"></i>
