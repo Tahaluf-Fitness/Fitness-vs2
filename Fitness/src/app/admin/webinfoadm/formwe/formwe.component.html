@@ -1,0 +1,177 @@
+<div class="row align-items-center justify-content-center">
+<div class="col-md-10">
+    <div class="panel panel-default card">
+        <div class="panel-body">
+         
+            <div class="h4 text-center">Website Info</div>
+            <div class="row pv-lg">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <form class="form-horizontal ng-pristine ng-valid" [formGroup]="formGroup"  >
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="webSiteName">WebSite Name</label>                                         
+                           </div>
+                         </div>                                       
+                         <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="logo">Title</label>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="webSiteName" class="form-control" type="text" [(ngModel)]="webSiteName">
+                            </div>
+                           </div>
+                        </div>
+                       
+                     <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="logo" class="form-control"  type="text" [(ngModel)]="logo">
+                            </div>
+                           </div>
+                        </div>
+
+                      </div>
+
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="backgroundImage">Sub title</label>                                         
+                           </div>
+                         </div>                                       
+                         <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="phoneNumber1">Mobile</label>                                         
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="backgroundImage" class="form-control" type="text" [(ngModel)]="backgroundImage" >
+                            </div>
+                           </div>
+                        </div>
+                       
+                     <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="phoneNumber1" class="form-control" type="text" [(ngModel)]="phoneNumber1" >
+                            </div>
+                           </div>
+                        </div>
+                      </div>
+              
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="email">Email</label>                                         
+                           </div>
+                         </div>                                       
+                         <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="country" >Country</label>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="email" class="form-control" type="text" [(ngModel)]="email">
+                            </div>
+                           </div>
+                        </div>
+                       
+                     <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="country" class="form-control" type="text" [(ngModel)]="country">
+                            </div>
+                           </div>
+                        </div>
+
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="city">City</label>                                         
+                           </div>
+                         </div>                                       
+                         <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="facebookLink">facebook Link</label>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="city" class="form-control"type="text" [(ngModel)]="city">
+                            </div>
+                           </div>
+                        </div>
+                       
+                     <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="facebookLink" class="form-control" type="text" [(ngModel)]="facebookLink">
+                            </div>
+                           </div>
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="instgramLink">Instgram Link</label>                                         
+                           </div>
+                         </div>                                       
+                         <div class="col-6">
+                          <div class="form-group">
+                            <label class="col-sm-10 control-label" for="twiterLink">Twiter Link</label>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="instgramLink" class="form-control"type="text" [(ngModel)]="instgramLink">
+                            </div>
+                           </div>
+                        </div>
+                       
+                     <div class="col-6">
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                                <input matInput formControlName="twiterLink" class="form-control" type="text" [(ngModel)]="twiterLink">
+                            </div>
+                           </div>
+                        </div>
+
+                      </div>
+                                     
+
+                      <div class="row align-items-center justify-content-center">
+
+                        <button mat-raised-button color="primary" type="submit" (click)="saveItem()">Edit</button>
+
+                      </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

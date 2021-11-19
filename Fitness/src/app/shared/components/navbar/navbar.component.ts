@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { InfoService } from 'src/app/services/info.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router,public authS:AuthService) { }
+  constructor(private router:Router,public authS:AuthService,public infoS:InfoService) { }
+  @Input () webSiteName:string|undefined;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.infoS.GetInfo()
   }
 
   goToAboutUs(){
@@ -22,8 +26,9 @@ export class NavbarComponent implements OnInit {
   this.router.navigate(['security/login'])
   }
 
-  goToContact(){
-    this.router.navigate(['contact'])
-    }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
 
 }
