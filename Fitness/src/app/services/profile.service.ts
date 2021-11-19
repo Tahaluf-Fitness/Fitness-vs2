@@ -13,7 +13,8 @@ import { AuthService } from './auth.service';
 export class ProfileService {
  
   data:any =[{}]
-  
+  data2:any =[{}]
+
   constructor(private spiner:NgxSpinnerService,private router:Router,private http:HttpClient,public authS:AuthService,private toastr:ToastrService) { }
 
 userID:number=this.authS.getCurrentUser()
@@ -24,6 +25,13 @@ GetUserInfoByID(){
  }))
 
 }
+GetStatistics(){
+  this.http.get('https://localhost:44303/api/user/getStatistics').subscribe((res=>{
+    this.data2=res;
+debugger    
+  }))
+ 
+ }
 
 update(id:number,data:any){
   this.spiner.show();

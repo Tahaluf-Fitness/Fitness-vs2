@@ -10,9 +10,11 @@
                   <ul class="nav">
                       <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                       <li class="scroll-to-section"><a (click)='goToAboutUs()'>About</a></li>
-                      <li class="scroll-to-section"><a >Competition</a></li>
-                      <li class="scroll-to-section"><a (click)='goToContact()' >Contact</a></li> 
-                      <li class="main-button"><a (click)='goToLogin()'>Login</a></li>
+                      <li *ngIf="!authS.isLoggedIn()" class="scroll-to-section"><a (click)='goToAboutUs()'>Dashboard</a></li>
+
+                      <li *ngIf="authS.isLoggedIn()" class="main-button"><a (click)='goToLogin()'>Login</a></li>
+                      <li *ngIf="!authS.isLoggedIn()" class="main-button"><a (click)='goToLogin()'>Logout</a></li>
+
                   </ul>        
                   <a class='menu-trigger'>
                       <span>Menu</span>

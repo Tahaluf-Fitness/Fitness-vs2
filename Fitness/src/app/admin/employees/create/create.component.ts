@@ -70,7 +70,6 @@ export class CreateComponent implements OnInit {
 
     this.userS.addEmployee(data);
     window.location.reload();
-
   }
 
 }
