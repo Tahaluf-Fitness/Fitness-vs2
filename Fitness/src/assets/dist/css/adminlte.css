@@ -4278,13 +4278,12 @@ input[type="button"].btn-block {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   list-style: none;
 }
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -11574,7 +11573,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .main-header .navbar-nav .nav-item {
-  margin: 0;
+  margin-bottom: 70px;
 }
 
 .main-header .navbar-nav[class*='-right'] .dropdown-menu {
@@ -11831,7 +11830,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .nav-sidebar .nav-item > .nav-link {
-  margin-bottom: .2rem;
+  margin-bottom: 4rem;
 }
 
 .nav-sidebar .nav-item > .nav-link .right {
@@ -11879,7 +11878,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .nav-sidebar > .nav-item .nav-icon {
-  margin-left: .05rem;
+  margin-left: 0;
   font-size: 1.2rem;
   margin-right: .2rem;
   text-align: center;
