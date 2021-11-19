@@ -14,31 +14,18 @@ export class AuthService {
 
   email=new FormControl('');
   password=new FormControl('');
+  isLoggedin: boolean = false;
 
-//   submit(){
-//     const emailcontrol=this.email.value;
-//     const passwordControl=this.password.value;
-//     this.spinner.show() 
-//     console.log(emailcontrol,passwordControl);
 
-//     setTimeout(()=>{
-//       this.router.navigate(['client'])
-//       this.spinner.hide();
-//  },700); 
-
-//   }
-
-  remmember(){
-    const emailcontrol=this.email.value;
-    const passwordControl=this.password.value;
-    const data = {
-      emailcontrol,
-      passwordControl
-    }
-    localStorage.setItem('data', JSON.stringify(data));
-  }
-
- 
+  // remmember(){
+  //   const emailcontrol=this.email.value;
+  //   const passwordControl=this.password.value;
+  //   const data = {
+  //     emailcontrol,
+  //     passwordControl
+  //   }
+  //   localStorage.setItem('data', JSON.stringify(data));
+  // }
 
   submit(){
 
@@ -91,6 +78,16 @@ export class AuthService {
       let id:number = parseInt(token.UserID)
       return id
       
+    }
+
+    isLoggedIn() {
+      if (localStorage.getItem("auth_token") == null) {
+        this.isLoggedin = false;
+        return this.isLoggedin;
+      }
+      else {
+        return true;
+      }
     }
 
     

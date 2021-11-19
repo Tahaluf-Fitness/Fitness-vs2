@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-adminprofile',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public profileS:ProfileService) { }
 
   ngOnInit(): void {
+    this.profileS.GetUserInfoByID()
+    this.profileS.GetStatistics()
   }
 
 }
