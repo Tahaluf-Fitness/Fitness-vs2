@@ -1,7 +1,22 @@
 <app-admnavbar></app-admnavbar>
 <app-admsidebar></app-admsidebar>
 <div class="content-wrapper">
-
-    <p>webinfoadm works!</p>
-</div>
-<app-admfooter></app-admfooter>
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">Info</li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-formwe *ngFor="let card of infoS.data" [webSiteName]="card.webSiteName" [logo]="card.logo" [backgroundImage]="card.backgroundImage"
+    [phoneNumber1]="card.phoneNumber1" [email]="card.email" [country]="card.country" [city]="card.city" [facebookLink]="card.facebookLink"
+    [instgramLink]="card.instgramLink" [twiterLink]="card.twiterLink"
+    ></app-formwe>

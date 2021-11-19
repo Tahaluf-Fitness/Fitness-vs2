@@ -81,13 +81,18 @@ export class AuthService {
     }
 
     isLoggedIn() {
-      if (localStorage.getItem("auth_token") == null) {
+      if (localStorage.getItem("token") == null) {
         this.isLoggedin = false;
         return this.isLoggedin;
       }
       else {
         return true;
       }
+    }
+
+    logout(){
+      localStorage.clear();
+      this.router.navigate(['/security/login']);
     }
 
     

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { InfoService } from 'src/app/services/info.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public infoS:InfoService) { }
+  @Input () logo:string|undefined;
+  @Input () backgroundImage:string|undefined;
   ngOnInit(): void {
+    this.infoS.GetInfo()
   }
 
 }
