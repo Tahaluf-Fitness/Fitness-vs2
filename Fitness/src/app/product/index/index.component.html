@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <section class="section" id="our-classes">
           <div class="container">
               <div class="row">
@@ -12,11 +13,12 @@
               <div class="row" id="tabs">
                 <div class="col-lg-4">
                   <ul>
-                    <li><a href='#tabs-1'><img src="assets/images/mes2.png" alt="">Sing Up / Login</a></li>
-                    <li><a href='#tabs-2'><img src="assets/images/mes3.png" alt="">Enter your measurments</a></li>
-                    <li><a href='#tabs-3'><img src="assets/images/mes1.png" alt="">Pay</a></li>
-                    <li><a href='#tabs-4'><img src="assets/images/mes.png" alt="">Get your diet</a></li>
-                    <div class="main-rounded-button"><a href="#">Start Now</a></div>
+                    <li *ngIf="!authS.isLoggedIn()"><a  style="cursor: pointer;" ><img src="assets/images/mes2.png" alt="">Sing Up / Login</a></li>
+                    <li><a (click)="addMeasurment()" style="cursor: pointer;" ><img src="assets/images/mes3.png" alt="">Enter your measurments</a></li>
+                    <li><a (click)="addPayment()" style="cursor: pointer;"><img src="assets/images/mes1.png" alt="">Pay</a></li>
+                    <li><a style="cursor: pointer;"><img src="assets/images/mes.png" alt="">Get your diet</a></li>
+                    <div class="main-rounded-button"><a (click)="reset()" style="cursor: pointer;">Reset Measurements</a></div>
+
                   </ul>
                 </div>
                 <div class="col-lg-8">
@@ -25,7 +27,9 @@
                       <img src="assets/images/first.jpg" alt="First Class">
                       <h4>Diets Report</h4>
                       <p>Sport brings together a mixture of people from different communities, backgrounds, religions and beliefs. Sport can offer a new way to meet others that you may not interact with day to day. As a result, you can make new friends. And who knows, playing a sport might even open new career and business opportunities for you.</p>
-                      
+                      <!-- <div class="main-button">
+                          <a href="#">View Schedule</a>
+                      </div> -->
                     </article>
                    
                   </section>

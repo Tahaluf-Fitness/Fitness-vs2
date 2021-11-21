@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Add Measurment</h2>
+<mat-dialog-content class="mat-typography">
+          <form [formGroup]="formGroup">
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Height</mat-label>
+                              <input matInput formControlName="height" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.height.hasError('required')">
+                                        Height is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>weight</mat-label>
+                              <input matInput formControlName="weight" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.weight.hasError('required')">
+                                        Weight <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Biceps Width</mat-label>
+                              <input matInput formControlName="bicepsWidth" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.bicepsWidth.hasError('required')">
+                                        Biceps Width <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Thigh Width</mat-label>
+                              <input type="text" matInput formControlName="thighWidth" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.thighWidth.hasError('required')">
+                                        Thigh Width is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Chest Width</mat-label>
+                              <input type="text" matInput formControlName="chest" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.chest.hasError('required')">
+                                        Chest Width is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Shoulder Width</mat-label>
+                              <input type="text" matInput formControlName="shoulder" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.shoulder.hasError('required')">
+                                        Shoulder Width is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Waist Width</mat-label>
+                              <input type="text" matInput formControlName="waist" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.waist.hasError('required')">
+                                        Waist Width is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+          </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial
+                    (click)="saveItem()">Save</button>
+</mat-dialog-actions>

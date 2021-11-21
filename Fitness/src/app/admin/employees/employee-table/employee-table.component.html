@@ -1,9 +1,9 @@
 
- <div class="row align-items-start justify-content-center mb-2">
+ <div class="row align-items-start justify-content-center mb-2" >
       <button (click)="addEmployee()">Add Employee</button>
 
 </div>
-      <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center justify-content-center" id="resumeBody" #resumeBody>
           <table mat-table [dataSource]="userS.data2" class="mat-elevation-z8 demo-table">
               
     
@@ -66,5 +66,7 @@
           </table>
           <!-- <mat-paginator pageSize="5" class="mat-elevation-z8" showFirstLastButtons></mat-paginator> -->
           <div>
+            <!-- <button mat-flat-button (click)="generateResume()" class="py-3 px-20 text-xl font-bold"
+            color="accent">Generate Report</button> -->
 
            
