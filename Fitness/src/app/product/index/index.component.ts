@@ -3,8 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { ReportsComponent } from 'src/app/admin/reports/reports.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
+import { ReportsService } from 'src/app/services/reports.service';
+import { UserreportService } from 'src/app/services/userreport.service';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductMeasComponent } from './product-meas/product-meas.component';
 
@@ -15,12 +18,16 @@ import { ProductMeasComponent } from './product-meas/product-meas.component';
 })
 export class IndexComponent implements OnInit {
 
-  constructor(private router:Router,public authS:AuthService,public productS:ProductService,private dialog:MatDialog,private toastr:ToastrService,private spinner:NgxSpinnerService) { }
+  constructor(private router:Router,public authS:AuthService,public productS:ProductService,
+    private dialog:MatDialog,private toastr:ToastrService,private spinner:NgxSpinnerService
+    ,public ReportS:UserreportService) { }
   size=0
   ngOnInit(){
     this.productS.counter.subscribe((value:any)=>{
       this.size=value
     })
+    this.getUserID()
+    console.log(this.id)
   }
 
   //  userID=this.authS.getCurrentUser()
@@ -35,10 +42,11 @@ export class IndexComponent implements OnInit {
       this.toastr.show('Please Login First')
     }
 
-    if(this.checkMeasurement != null){
+    if(this.authS.isLoggedIn() && this.checkMeasurement != null){
       this.toastr.show('You added your measurments')
 
     }  
+
   }
 
   addPayment(){
@@ -57,6 +65,15 @@ export class IndexComponent implements OnInit {
     }
   }
 
+  data:any=[{}]
+  currentDate=new Date()
+  id:number=0
+  getUserID(){
+    if(localStorage.getItem('token')!=null){
+      this.id=this.authS.getCurrentUser()
+    }
+  }
+
   generateDiet(){
       const obj=localStorage.getItem('measurementData')
       let bmi=0
@@ -66,20 +83,45 @@ export class IndexComponent implements OnInit {
       }
 
     if(this.authS.isLoggedIn() && this.checkMeasurement != null && this.checkPayment != null){
-      console.log(bmi)
+      
       if(bmi<=18.5){
+        this.data={
+          ReportDate:this.currentDate,
+          DietReportID:1,
+          UserID:this.id
+        }
+        console.log(this.data)
+        this.ReportS.createUserReport(this.data);
         const path = "../../../assets/doc/Underweight.pdf";
         window.open(path);
       }
       if(bmi>=18.5 && bmi<=25){
+        this.data={
+          ReportDate:this.currentDate,
+          DietReportID:2,
+          UserID:this.id
+        }
+        this.ReportS.createUserReport(this.data);
         const path = "../../../assets/doc/Optimal.pdf";
         window.open(path);
       }
       if(bmi>=25 && bmi<=30){
+        this.data={
+          ReportDate:this.currentDate,
+          DietReportID:3,
+          UserID:this.id
+        }
+        this.ReportS.createUserReport(this.data);
         const path = "../../../assets/doc/Overweight.pdf";
         window.open(path);
       }
       if( bmi>30){
+        this.data={
+          ReportDate:this.currentDate,
+          DietReportID:4,
+          UserID:this.id
+        }
+        this.ReportS.createUserReport(this.data);
         const path = "../../../assets/doc/Obese.pdf";
         window.open(path);
       }

@@ -36,4 +36,12 @@ export class UserreportService {
     }))
    }
 
+   createUserReport(data:any){
+    this.http.post('https://localhost:44303/api/UserReports/',data).subscribe((res:any)=>{
+    })
+  
+   }
+
+  
+
 }

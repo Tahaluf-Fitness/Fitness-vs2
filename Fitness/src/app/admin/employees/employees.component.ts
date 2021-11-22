@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/services/users.service';
+import { CreateComponent } from './create/create.component';
 
 @Component({
   selector: 'app-employees',
@@ -19,6 +20,11 @@ export class EmployeesComponent implements OnInit {
 
   getData(){
     this.userS.GetAllEmployees()   
+}
+
+addEmployee(){
+  this.dialog.open(CreateComponent)
+
 }
 
    
