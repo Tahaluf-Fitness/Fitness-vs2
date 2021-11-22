@@ -21,7 +21,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+
 import { NavComponent } from './nav/nav.component';
 
 
@@ -56,8 +56,8 @@ import { NavComponent } from './nav/nav.component';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
-    MatSelectModule,
-    IvyCarouselModule
+    MatSelectModule
+
   ],
   exports:[
     CommonModule,
@@ -80,8 +80,7 @@ import { NavComponent } from './nav/nav.component';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
-    MatSelectModule,
-    IvyCarouselModule
+    MatSelectModule
     ]
 
   

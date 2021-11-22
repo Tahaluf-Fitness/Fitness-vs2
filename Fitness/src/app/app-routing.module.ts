@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutusModule } from './aboutus/aboutus.module';
 import { AdminModule } from './admin/admin.module';
 import { AutheraizationGuard } from './autheraization.guard';
+import { BestfoodModule } from './bestfood/bestfood.module';
 import { ProductModule } from './product/product.module';
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
     loadChildren :()=>AboutusModule
 
   },
+  { path:'bestfood', loadChildren:()=>BestfoodModule},
   {
     path:'client',
     loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule),
