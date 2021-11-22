@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/services/auth.service';
 import { InfoService } from 'src/app/services/info.service';
 
@@ -11,11 +13,29 @@ import { InfoService } from 'src/app/services/info.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router,public authS:AuthService,public infoS:InfoService) { }
+  constructor(private router:Router,public authS:AuthService,public infoS:InfoService,private spinner:NgxSpinnerService) { }
   @Input () webSiteName:string|undefined;
 
   ngOnInit() {
     this.infoS.GetInfo()
+  }
+
+  goToHome(){
+    this.router.navigate([''])
+
+  }
+
+  goToDashboard(){
+    const tokenString = localStorage.getItem('token') || 'invalid token';
+    let token:any=jwtDecode(tokenString);  
+    let role= token.roleName
+    if(role='admin') {
+      this.router.navigate(['admin'])
+    }
+    if(role='client') {
+      this.router.navigate(['client'])
+    }
+  
   }
 
   goToAboutUs(){
@@ -26,9 +46,20 @@ export class NavbarComponent implements OnInit {
   this.router.navigate(['security/login'])
   }
 
+  goToDiet(){
+    this.router.navigate(['diet'])
+
+  }
   logout(){
-    localStorage.clear();
-    this.router.navigate(['']);
+    this.spinner.show();
+      setTimeout(()=>{
+        localStorage.clear();
+        this.spinner.hide();
+      },200)
+      this.router.navigate(['']);
+    }
+
+
   }
 
-}
+

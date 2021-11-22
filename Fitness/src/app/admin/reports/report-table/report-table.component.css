@@ -7,14 +7,8 @@
           text-align: center;
         
         }
-        
-        .mat-column-reportDate {
-          width: 30px;
-          padding-right: 24px;
-          text-align: center;
-        }
-      
-        
+
+            
         .mat-column-dietFile {
           width: 30px;
           padding-right: 24px;
@@ -22,6 +16,12 @@
         }
         
         .mat-column-dietPeriod {
+          width: 30px;
+          padding-right: 24px;
+          text-align: center;
+        }
+
+        .mat-column-delete {
           width: 30px;
           padding-right: 24px;
           text-align: center;

@@ -19,7 +19,7 @@ export interface PeriodicElement {
 })
 export class DietTableComponent implements OnInit {
 
-  constructor(public reportsS:UserreportService) { }
+  constructor(public userReportS:UserreportService) { }
 
   @Input () userReportID:number|undefined;
   @Input () email:string|undefined;
