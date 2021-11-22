@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ReportsService } from 'src/app/services/reports.service';
 
 export interface PeriodicElement {
-  reportDate: Date;
   dietFile: string;
   dietPeriod: number;
   actualprice: number;
@@ -17,9 +17,8 @@ export interface PeriodicElement {
 })
 export class ReportTableComponent implements OnInit {
 
-  constructor(public reportsS:ReportsService) { }
-
-  @Input () reportDate:Date|undefined;
+  constructor(public reportsS:ReportsService,private toastr:ToastrService) { }
+  @Input () DietReportId:number|undefined
   @Input () dietFile:string|undefined;
   @Input () dietPeriod:number|undefined;
   @Input () actualprice:number|undefined;
@@ -28,7 +27,20 @@ export class ReportTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['reportDate', 'dietFile', 'dietPeriod','actualprice','customerPrice','categoryName'];
+  displayedColumns: string[] = ['dietFile', 'dietPeriod','actualprice','customerPrice','categoryName','delete'];
   clickedRows = new Set<PeriodicElement>();
+
+  Delete(){
+    if(this.DietReportId){
+      this.reportsS.DeletebyID(this.DietReportId);
+      window.location.reload();
+
+    }
+    else {
+      this.toastr.warning('This item cannot be deleted')
+      window.location.reload();
+
+    }
+  }
 
 }

@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+<section class="section" id="our-classes">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 offset-lg-3">
+                      <div class="section-heading">
+                          <h2>Generate <em>Diet</em></h2>
+                          <img src="assets/images/line-dec.png" alt="">
+                          <p>Healthy foods are those that provide you with the nutrients you need to sustain your body’s well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="row" id="tabs">
+                <div class="col-lg-4">
+                  <ul>
+                    <li *ngIf="!authS.isLoggedIn()" (click)="goToSignUp()"><a  style="cursor: pointer;" ><img src="assets/images/mes2.png" alt="">Sing Up / Login</a></li>
+                    <li><a (click)="addMeasurment()" style="cursor: pointer;" ><img src="assets/images/mes3.png" alt="">Enter your measurments</a></li>
+                    <li><a (click)="addPayment()" style="cursor: pointer;"><img src="assets/images/mes1.png" alt="">Pay</a></li>
+                    <li><a (click)="generateDiet()" style="cursor: pointer;"><img src="assets/images/mes.png" alt="">Get your diet</a></li>
+                    <div class="main-rounded-button mb-3"><a (click)="reset()" *ngIf="authS.isLoggedIn()" style="cursor: pointer;" >Reset Measurements</a></div>
+                    <div class="main-rounded-button" *ngIf="authS.isLoggedIn()"><a (click)="reGenerateDiet()" style="cursor: pointer;" >Re-Generate Diet</a></div>
+
+
+                  </ul>
+                </div>
+                <div class="col-lg-8">
+                  <section class='tabs-content'>
+                    <article id='tabs-1'>
+                      <img src="assets/images/first.jpg" alt="First Class">
+                      <h4>Diets Report</h4>
+                      <p>Sport brings together a mixture of people from different communities, backgrounds, religions and beliefs. Sport can offer a new way to meet others that you may not interact with day to day. As a result, you can make new friends. And who knows, playing a sport might even open new career and business opportunities for you.</p>
+                      <!-- <div class="main-button">
+                          <a href="#">View Schedule</a>
+                      </div> -->
+                    </article>
+                   
+                  </section>
+                </div>
+              </div>
+          </div>
+      </section>
