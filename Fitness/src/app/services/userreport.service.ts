@@ -25,17 +25,15 @@ export class UserreportService {
       this.toastr.success('Data retrieved Successfully');
    
     }))
-    console.log(this.data)
-    debugger
+   
    }
 
-   GetAllReports(){
+   GetAllUserReports(){
     this.http.get('https://localhost:44303/api/UserReports').subscribe((res=>{
       this.data2=res;
       this.toastr.success('Data retrieved Successfully');
    
     }))
-    console.log(this.data)
    }
 
 }

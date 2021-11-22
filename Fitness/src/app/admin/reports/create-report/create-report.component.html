@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>Create Report</h2>
+<mat-dialog-content class="mat-typography">
+          <form [formGroup]="formGroup">
+
+                    
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Duration</mat-label>
+                              <input type="text" matInput formControlName="DietPeriod" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.DietPeriod.hasError('required')">
+                                        Duration is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Actual Price</mat-label>
+                              <input type="text" matInput formControlName="Actualprice" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.Actualprice.hasError('required')">
+                                        Actual Price is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+
+                    <br>
+                    <mat-form-field class="example-full-width ml-2">
+                              <mat-label>Customer Price</mat-label>
+                              <input type="text" matInput formControlName="CustomerPrice" style="font-size: x-large;">
+                              <mat-error *ngIf="formGroup.controls.CustomerPrice.hasError('required')">
+                                        Customer Price is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+
+                    <br>
+                    <mat-form-field class="example-full-width">
+                              <mat-label>Diet Category</mat-label>
+                              <mat-select matInput formControlName="DietCategoryId">
+                                        <mat-option value="1">Underweight</mat-option>
+                                        <mat-option value="2">Optimal</mat-option>
+                                        <mat-option value="3">Overweight</mat-option>
+                                        <mat-option value="4">Obese</mat-option>
+
+                              </mat-select>
+                              <mat-error *ngIf="formGroup.controls.DietCategoryId.hasError('required')">
+                                        Diet Category is <strong>required</strong>
+                              </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <div class="example-full-width">
+                              <input type="file" #file placeholder="Choose File" formControlName="DietFile"
+                                        (change)="uploadFile(file.files)" style="display:none;">
+                              <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+
+                    </div>
+          </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial
+                    (click)="saveItem()">Save</button>
+</mat-dialog-actions>

@@ -37,6 +37,10 @@ export class ProductService {
   
   }
 
+  createUserReports(data:any){
+    this.http.post('https://localhost:44303/api/measurement/',data)
+  }
+
   
 
  

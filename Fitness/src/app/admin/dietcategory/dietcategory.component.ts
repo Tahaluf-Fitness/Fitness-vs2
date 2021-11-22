@@ -11,15 +11,14 @@ import { UserreportService } from 'src/app/services/userreport.service';
 })
 export class DietcategoryComponent implements OnInit {
 
-  constructor(private router:Router,public reportS:UserreportService,private toastr:ToastrService,private dialog:MatDialog) {}
+  constructor(private router:Router,public userReportS:UserreportService,private toastr:ToastrService,private dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.getData()
   }
 
   getData(){
-    this.reportS.GetAllReports()
-
+    this.userReportS.GetAllUserReports()
   }
 
 }

@@ -23,6 +23,7 @@ import { FormadComponent } from './adminprofile/formad/formad.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ReportTableComponent } from './reports/report-table/report-table.component';
 import { FormweComponent } from './webinfoadm/formwe/formwe.component';
+import { CreateReportComponent } from './reports/create-report/create-report.component';
 
 
 
@@ -48,6 +49,7 @@ import { FormweComponent } from './webinfoadm/formwe/formwe.component';
     ReportsComponent,
     ReportTableComponent,
     FormweComponent,
+    CreateReportComponent,
 
   ],
   imports: [
