@@ -11,26 +11,26 @@ import { AuthService } from './auth.service';
 })
 export class InfoService {
 
-  constructor(private spiner:NgxSpinnerService,private router:Router,private http:HttpClient,public authS:AuthService,private toastr:ToastrService,private dialog:MatDialog) { }
+  constructor(private spiner: NgxSpinnerService, private router: Router, private http: HttpClient, public authS: AuthService, private toastr: ToastrService, private dialog: MatDialog) { }
 
-  data:any=[{}]
-  
-  GetInfo(){
-    this.http.get('https://localhost:44303/api/WebSiteInfo').subscribe((res=>{
-      this.data=res;
+  data: any = [{}]
+
+  GetInfo() {
+    this.http.get('https://localhost:44303/api/WebSiteInfo').subscribe((res => {
+      this.data = res;
     }))
-   }
+  }
 
-   update(data:any){
+  update(data: any) {
     this.spiner.show();
-    this.http.put('https://localhost:44303/api/WebSiteInfo/',data).subscribe((res:any)=>{
+    this.http.put('https://localhost:44303/api/WebSiteInfo/', data).subscribe((res: any) => {
       this.toastr.success('Info updated succsessfuly');
       this.spiner.hide();
-  
-    },err=>{
-     this.spiner.hide();
-     this.toastr.error('Not Updated');
-  
+
+    }, err => {
+      this.spiner.hide();
+      this.toastr.error('Not Updated');
+
     })
   }
 

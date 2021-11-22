@@ -21,6 +21,9 @@ export class NavbarComponent implements OnInit {
   goToAboutUs(){
    this.router.navigate(['aboutus'])
   }
+  goTobestfood(){
+    this.router.navigate(['bestfood'])
+  }
 
   goToLogin(){
   this.router.navigate(['security/login'])

@@ -43,7 +43,6 @@ export class MeasTableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  // dataSource = this.measS.data;
 
   
   constructor(private router:Router,public measS:MeasurementService,private toastr:ToastrService,private dialog:MatDialog) {}
