@@ -10,9 +10,6 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class MeasurementService {
-
-  
-
 data :any =[{}]
 selectedMeasure:any=[{}];
 
@@ -21,8 +18,6 @@ constructor(private spiner:NgxSpinnerService,private router:Router,private http:
 
 userID:number=this.authS.getCurrentUser()
 
-
-
 GetMeasurementByUserID(){
  this.http.get('https://localhost:44303/api/Measurement/my-measurements/'+this.userID).subscribe((res=>{
    this.data=res;
@@ -30,7 +25,6 @@ GetMeasurementByUserID(){
 
  }))
 }
-
 
 
 DeletebyID(id:number){
