@@ -32,19 +32,19 @@ const routes: Routes = [
   {
     path:'client',
     loadChildren :()=> import('./client/client.module').then ((m)=>m.ClientModule),
-    // canActivate :[AutheraizationGuard]
+    canActivate :[AutheraizationGuard]
 
   },
   {
     path:"admin", loadChildren:()=>AdminModule,
-    // canActivate :[AutheraizationGuard]
+    canActivate :[AutheraizationGuard]
 
   },
   
   {
     path:'accountant',
     loadChildren :()=> import('./accountant/accountant.module').then ((m)=>m.AccountantModule),
-    // canActivate :[AutheraizationGuard]
+    canActivate :[AutheraizationGuard]
 
   }
   
