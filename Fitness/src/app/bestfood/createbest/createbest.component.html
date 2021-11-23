@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Create Best Food </h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
+            <mat-label>Title Name</mat-label>
+            <input matInput formControlName="Title" style="font-size: x-large;" placeholder="Title Name ">
+            <mat-error *ngIf="formGroup.controls.Title.hasError('required')">
+                
+                Title is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description Food</mat-label>
+            <input matInput formControlName="Descriptions" style="font-size: x-large;">
+            <mat-error *ngIf="formGroup.controls.Descriptions.hasError('required')">
+                description is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Image for Food</mat-label>
+            <input matInput formControlName="Imagefood" style="font-size: x-large;" placeholder="Ex. WI Street">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Subtitle</mat-label>
+            <input type="text" matInput formControlName="Subtitle" style="font-size: x-large;">
+            <mat-error *ngIf="formGroup.controls.Subtitle.hasError('required')">
+                subtitle is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial
+        (click)="saveItem()">Save</button>
+</mat-dialog-actions>
