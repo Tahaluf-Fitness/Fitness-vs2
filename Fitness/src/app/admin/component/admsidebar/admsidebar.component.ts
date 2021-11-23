@@ -15,6 +15,9 @@ export class AdmsidebarComponent implements OnInit {
   gotoptoprofile(){
     this.router.navigate(['admin'])
   }
+  gotoptobestfood(){
+    this.router.navigate(['admin/best'])
+  }
   gotousers(){
     this.router.navigate(['admin/users'])
   }
