@@ -27,17 +27,17 @@ export class IndexComponent implements OnInit {
   // }
 
 
-  // getAll() {
-  //   this.spiner.show();
-  //   debugger
-  //   this.bestfood.getAllBestFood().subscribe((res: any) => {
-  //     this.bestfood.data = res;
-  //     this.spiner.hide();
-  //     this.tostr.success('Data Retrived !!!')
-  //   }, err => {
-  //     this.spiner.hide();
-  //     this.tostr.error('something want worring!!')
-  //   })
-  // }
+  getAll() {
+    this.spiner.show();
+    debugger
+    this.bestfood.getAllBestFood().subscribe((res: any) => {
+      this.bestfood.data = res;
+      this.spiner.hide();
+      this.tostr.success('Data Retrived !!!')
+    }, err => {
+      this.spiner.hide();
+      this.tostr.error('something want worring!!')
+    })
+  }
 
 }
