@@ -13,6 +13,7 @@ export class ReportsService {
 
   data :any =[{}]
   display_file: any;
+  selectDiet:any=[{}]
 
 
   constructor(private spiner:NgxSpinnerService,private router:Router,private http:HttpClient,public authS:AuthService,private toastr:ToastrService,private dialog:MatDialog) { }
@@ -67,6 +68,25 @@ export class ReportsService {
       },err=>{
         this.spiner.hide();  
       })
+    }
+
+    getDietByCategory(name:string){
+      this.spiner.show();
+      this.http.get('https://localhost:44303/api/DietReport/search/'+name).subscribe((data:any)=>{       
+        this.selectDiet=data;
+        console.log(this.selectDiet);
+        this.data=this.selectDiet;
+        this.router.navigate(['admin/all-reports']);
+
+        debugger
+        this.spiner.hide();
+  
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error(err.status);
+      })
+      debugger
+
     }
 
   }

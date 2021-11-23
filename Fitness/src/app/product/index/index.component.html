@@ -15,8 +15,8 @@
                   <ul>
                     <li *ngIf="!authS.isLoggedIn()" (click)="goToSignUp()"><a  style="cursor: pointer;" ><img src="assets/images/mes2.png" alt="">Sing Up / Login</a></li>
                     <li><a (click)="addMeasurment()" style="cursor: pointer;" ><img src="assets/images/mes3.png" alt="">Enter your measurments</a></li>
-                    <li><a (click)="addPayment()" style="cursor: pointer;"><img src="assets/images/mes1.png" alt="">Pay</a></li>
-                    <li><a (click)="generateDiet()" style="cursor: pointer;"><img src="assets/images/mes.png" alt="">Get your diet</a></li>
+                    <li><a (click)="addPayment()" style="cursor: pointer;"><img src="assets/images/pay.png" style="height: 50px;">Pay</a></li>
+                    <li><a (click)="generateDiet()" style="cursor: pointer;"><img src="assets/images/download.png" style="height: 30px;">Get your diet</a></li>
                     <div class="main-rounded-button mb-3"><a (click)="reset()" *ngIf="authS.isLoggedIn()" style="cursor: pointer;" >Reset Measurements</a></div>
                     <div class="main-rounded-button" *ngIf="authS.isLoggedIn()"><a (click)="reGenerateDiet()" style="cursor: pointer;" >Re-Generate Diet</a></div>
 
