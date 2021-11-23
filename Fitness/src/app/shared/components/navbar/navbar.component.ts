@@ -24,6 +24,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([''])
 
   }
+  goToBestFood(){
+    this.router.navigate(['admin/best'])
+  }
 
   goToDashboard(){
     const tokenString = localStorage.getItem('token') || 'invalid token';
