@@ -36,8 +36,9 @@ export class PaymentComponent implements OnInit {
       cardDate:this.cardDate1,
       cardPassword:parseInt(this.cardPassword1)     
     }
-    localStorage.setItem('paymentData',JSON.stringify(this.productS.paymentData))
     this.toastr.show('You payed successfully,your file is ready to download')
+    localStorage.setItem('paymentData',JSON.stringify(this.productS.paymentData))
+    window.location.reload()
     
 
     

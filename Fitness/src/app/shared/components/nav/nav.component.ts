@@ -55,4 +55,9 @@ export class NavComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  goToBestFood(){
+    this.router.navigate(['bestfood'])
+  }
+
+
 }

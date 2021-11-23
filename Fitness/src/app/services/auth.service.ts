@@ -66,20 +66,21 @@ export class AuthService {
            
           })
               this.spinner.hide();
-         },200); 
-
-     
+         },200);      
     }
-
+id:number=0
     getCurrentUser(){
-      const tokenString = localStorage.getItem('token') || 'invalid token';
-      let token:any=jwtDecode(tokenString);
-      let id:number = parseInt(token.UserID)
-      return id      
+      const tokenString = localStorage.getItem('token');
+      if(tokenString!=null){
+        let token:any=jwtDecode(tokenString);
+         this.id = parseInt(token.UserID)
+
+      }
+      return this.id      
     }
 
     isLoggedIn() {
-      if (localStorage.getItem("token") == null) {
+      if (localStorage.getItem("token") == null || localStorage.getItem("token") == 'invalid token') {
         this.isLoggedin = false;
         return this.isLoggedin;
       }

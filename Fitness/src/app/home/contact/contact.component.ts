@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/services/contact.service';
 
@@ -14,11 +14,17 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input () Name:string|undefined;
+  @Input () Email:string|undefined;
+  @Input () Subject:string|undefined;
+  @Input () Message:string|undefined;
+
+
   formGroup =new FormGroup({
-    name:new FormControl('',Validators.required),
-    email:new FormControl('',[Validators.email,Validators.required]),
-    subject:new FormControl('',Validators.required),
-    message:new FormControl('',Validators.required) 
+    Name:new FormControl('',Validators.required),
+    Email:new FormControl('',[Validators.email,Validators.required]),
+    Subject:new FormControl('',Validators.required),
+    Message:new FormControl('',Validators.required) 
   })
 
   name2:any;
@@ -27,22 +33,21 @@ export class ContactComponent implements OnInit {
   message2:any;
 
   saveItem(){
-    this.name2=this.formGroup.value.email;//c#
-    this.email2=this.formGroup.value.name;
-    this.subject2=this.formGroup.value.subject;
-    this.message2=this.formGroup.value.message;
+    this.name2=this.formGroup.value.Name;//c#
+    this.email2=this.formGroup.value.Email;
+    this.subject2=this.formGroup.value.Subject;
+    this.message2=this.formGroup.value.Message;
   
 
 
     const data2={
-      name:this.name2,
-      email:this.email2,
-      subject:this.subject2,
-      message:this.message2
+      Name:this.name2,
+      Email:this.email2,
+      Subject:this.subject2,
+      Message:this.message2
      
     }
     this.contactS.create(data2);
-    debugger
     window.location.reload();
 
   }

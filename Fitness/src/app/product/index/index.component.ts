@@ -75,12 +75,6 @@ export class IndexComponent implements OnInit {
     }
   }
 
-   counter = [{
-    "num": 0
- }]
-  setCounter=localStorage.setItem('setCounter',JSON.stringify(this.counter))
-  getCounter=localStorage.getItem('setCounter')
-
   generateDiet(){
       const obj=localStorage.getItem('measurementData')
       let bmi=0
@@ -91,7 +85,6 @@ export class IndexComponent implements OnInit {
      
 
     if(this.authS.isLoggedIn() && this.checkMeasurement != null && this.checkPayment != null){
-      
       if(bmi<=18.5){
         this.data={
           ReportDate:this.currentDate,
@@ -124,7 +117,6 @@ export class IndexComponent implements OnInit {
         }
        
         this.ReportS.createUserReport(this.data)  
-      
         const path = "../../../assets/doc/Overweight.pdf";
         window.open(path);
         window.location.reload()
@@ -141,19 +133,19 @@ export class IndexComponent implements OnInit {
         window.location.reload()
       
     }
-    if(this.checkMeasurement == null && this.authS.isLoggedIn()){
-      this.toastr.show('Please enter your measurements first')
-    }
+  }
 
-    if(this.checkPayment == null && this.checkMeasurement!=null){
+    if(this.checkPayment == null && this.checkMeasurement!=null && this.authS.isLoggedIn()){
       this.toastr.show('Please pay first')
     }
 
+    if(this.checkPayment == null && this.checkMeasurement==null && this.authS.isLoggedIn()){
+      this.toastr.show('Please enter your measurements and pay')
+    }
     if(!this.authS.isLoggedIn()){
       this.toastr.show('Please login First')
-
     }
-  }
+  
 }
   
   goToSignUp(){

@@ -85,7 +85,6 @@ export class FormadComponent implements OnInit {
       userID:this.id
     }
     this.profileS.update(this.id,data2);
-    debugger
 
   }
 

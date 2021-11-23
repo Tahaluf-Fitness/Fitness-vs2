@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { WindowScrollController } from '@fullcalendar/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 
@@ -27,6 +28,7 @@ DeletebyID(id:number){
   .subscribe((date:any)=>{
     this.spiner.hide();
     this.toastr.success('Deleted');
+    window.location.reload()
   
   },err=>{
     this.spiner.hide();  
