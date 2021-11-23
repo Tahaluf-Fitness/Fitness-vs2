@@ -22,4 +22,8 @@
     <div class="row align-items-center justify-content-center mb-2">
       <button class="btn btn-primary" (click)="addEmployee()">Add Employee</button>
     </div>
+    <div class="row align-items-center justify-content-center mb-2">
+      <input class="text-center" placeholder="Search by firstname" (change)="searchEmployeeByFirstname($event)" style="cursor: pointer;">
+
+    </div>
 <app-employee-table></app-employee-table>

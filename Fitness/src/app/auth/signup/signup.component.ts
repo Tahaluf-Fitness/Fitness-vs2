@@ -37,7 +37,7 @@ addUser(data:any){
     this.toastr.success('User created successfuly');
     this.spiner.hide();
     window.location.reload();
-    this.router.navigate(['security/signin'])
+    this.router.navigate(['security/login'])
 
 
 
@@ -84,6 +84,6 @@ debugger
 
 
   goToSignIn(){
-    this.router.navigate(['security/signin'])
+    this.router.navigate(['security/login'])
   }
 }

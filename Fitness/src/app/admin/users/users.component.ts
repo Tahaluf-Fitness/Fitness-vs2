@@ -23,6 +23,10 @@ export class UsersComponent implements OnInit {
     this.userS.GetAllClients()   
 }
 
+searchUserByFirstname(e:any){
+  this.userS.searchUserByFirstname(e.target.value);
+}
+
   
 
 }
