@@ -4,6 +4,7 @@ import { AboutusModule } from './aboutus/aboutus.module';
 import { AdminModule } from './admin/admin.module';
 import { AutheraizationGuard } from './autheraization.guard';
 import { BestfoodModule } from './bestfood/bestfood.module';
+import { ProductModule } from './product/product.module';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path:'',
     loadChildren :()=> import('./home/home.module').then ((m)=>m.HomeModule)
+
+  },
+  {
+    path:'diet',
+    loadChildren :()=> ProductModule
 
   },
   {

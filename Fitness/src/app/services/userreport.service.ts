@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -25,17 +26,15 @@ export class UserreportService {
       this.toastr.success('Data retrieved Successfully');
    
     }))
-    console.log(this.data)
-    debugger
+   
    }
 
-   GetAllReports(){
+   GetAllUserReports(){
     this.http.get('https://localhost:44303/api/UserReports').subscribe((res=>{
       this.data2=res;
       this.toastr.success('Data retrieved Successfully');
    
     }))
-    console.log(this.data)
    }
 
 }

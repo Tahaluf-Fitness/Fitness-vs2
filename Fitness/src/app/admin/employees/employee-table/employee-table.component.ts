@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/services/users.service';
 import { CreateComponent } from '../create/create.component';
+import { jsPDF } from "jspdf";
+
 
 export interface PeriodicElement {
   userId: number;
@@ -25,6 +27,7 @@ export interface PeriodicElement {
   styleUrls: ['./employee-table.component.css']
 })
 export class EmployeeTableComponent implements OnInit {
+  @ViewChild('resumeBody',{static: false}) element!: ElementRef;
 
   constructor(private router:Router,public userS:UsersService,private toastr:ToastrService,private dialog:MatDialog) {}
 
@@ -48,6 +51,13 @@ export class EmployeeTableComponent implements OnInit {
   addEmployee(){
     this.dialog.open(CreateComponent)
 
+  }
+
+  generateResume(){
+    let generatedResumePDF = new jsPDF('p','pt','a3');
+    generatedResumePDF.html(this.element.nativeElement, {
+      callback: (pdfFile)=> pdfFile.save('test.pdf')
+    });
   }
 
 }

@@ -1,4 +1,23 @@
 <app-navbar></app-navbar>
 <app-banner></app-banner>
-<app-bestbody></app-bestbody>
+
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Training Web Site </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<button (click)="createBestFood()">Create New Best Food</button>
+<div class=container>
+    <div class="cards">
+        <app-bestbody *ngFor="let card of bestfood.data" [BestFoodId]="card.BestFoodId" [title]="card.title"
+            [description]="card.description" [Imagefood]="card.Imagefood" [subtitle]="card.subtitle"> </app-bestbody> 
+    </div>
 <app-footer></app-footer>

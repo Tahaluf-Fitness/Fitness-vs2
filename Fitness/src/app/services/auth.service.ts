@@ -45,7 +45,6 @@ export class AuthService {
       this.spinner.show();
       setTimeout(()=>{
         this.http.post('https://localhost:44303/api/jwt',body,requestOptions).subscribe((res:any)=>{
-          this.spinner.hide()
           responce1=res;
           const responce={
             token:responce1.toString()
@@ -67,7 +66,7 @@ export class AuthService {
            
           })
               this.spinner.hide();
-         },400); 
+         },200); 
 
      
     }
@@ -76,8 +75,7 @@ export class AuthService {
       const tokenString = localStorage.getItem('token') || 'invalid token';
       let token:any=jwtDecode(tokenString);
       let id:number = parseInt(token.UserID)
-      return id
-      
+      return id      
     }
 
     isLoggedIn() {
@@ -91,7 +89,11 @@ export class AuthService {
     }
 
     logout(){
-      localStorage.clear();
+      this.spinner.show();
+      setTimeout(()=>{
+        localStorage.clear();
+        this.spinner.hide();
+      },300)
       this.router.navigate(['/security/login']);
     }
 

@@ -22,6 +22,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -33,7 +34,8 @@ import {MatSelectModule} from '@angular/material/select';
   
     NavbarComponent,
           FooterComponent,
-          PreloaderComponent
+          PreloaderComponent,
+          NavComponent
   ],
   imports: [
     CommonModule,

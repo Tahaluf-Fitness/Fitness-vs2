@@ -18,9 +18,9 @@ export class LayoutComponent implements OnInit {
     this.spinner.show()
 
     setTimeout(()=>{
-      this.router.navigate(['client'])
       this.spinner.hide();
- },500); 
+      this.router.navigate(['client'])
+ },300); 
 
   }
 
@@ -30,33 +30,30 @@ export class LayoutComponent implements OnInit {
     setTimeout(()=>{
       this.router.navigate(['client/measurments'])
       this.spinner.hide();
- },500); 
+ },300); 
 
 
   }
 
   goToDiets(){
-    this.spinner.show()
 
-    setTimeout(()=>{
       this.router.navigate(['client/diet'])
-      this.spinner.hide();
- },500); 
+ 
 
   }
 
   goToCompetitions(){
-    this.spinner.show()
-
-    setTimeout(()=>{
-      this.router.navigate(['client/competitions'])
-      this.spinner.hide();
- },500); 
-
+    this.router.navigate(['client/competitions'])
   }
 
   logout(){
     localStorage.clear();
-    this.router.navigate(['']);
+    this.spinner.show()
+
+    setTimeout(()=>{
+      this.router.navigate(['']);
+      this.spinner.hide();
+ },300); 
+
   }
 }
