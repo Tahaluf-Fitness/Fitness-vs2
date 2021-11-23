@@ -42,6 +42,7 @@ export class CreateReportComponent implements OnInit {
     }
 
     this.reportsS.createReport(data)
+    window.location.reload()
   }
 
   uploadFile(files:any) {

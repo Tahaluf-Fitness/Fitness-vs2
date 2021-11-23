@@ -48,10 +48,7 @@ export class EmployeeTableComponent implements OnInit {
   clickedRows = new Set<PeriodicElement>();
 
 
-  addEmployee(){
-    this.dialog.open(CreateComponent)
-
-  }
+ 
 
   generateResume(){
     let generatedResumePDF = new jsPDF('p','pt','a3');

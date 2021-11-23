@@ -20,4 +20,9 @@ export class ReportsComponent implements OnInit {
   this.dialog.open(CreateReportComponent)
   }
 
+  GetData(e:any){
+    this.reportS.getDietByCategory(e.target.value);
+    debugger
+  }
+
 }

@@ -18,8 +18,12 @@
       </div>
     </div>
 
-    <div class="row align-items-center justify-content-center">
-      <button type="button" class="btn btn-success" (click)="AddFile()">Upload File</button>
+    <div class="row align-items-center justify-content-center mb-2">
+      <button type="button" class="btn btn-primary" (click)="AddFile()">Upload File</button>
+
+    </div>
+    <div class="row align-items-center justify-content-center mb-2">
+      <input class="text-center" placeholder="Search by category" (change)="GetData($event)">
 
     </div>
 
