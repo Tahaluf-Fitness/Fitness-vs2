@@ -24,6 +24,9 @@ import { ReportsComponent } from './reports/reports.component';
 import { ReportTableComponent } from './reports/report-table/report-table.component';
 import { FormweComponent } from './webinfoadm/formwe/formwe.component';
 import { CreateReportComponent } from './reports/create-report/create-report.component';
+import { BestfoodComponent } from './bestfood/bestfood.component';
+import { CreatebestComponent } from './bestfood/createbest/createbest.component';
+import { CardfoodComponent } from './bestfood/cardfood/cardfood.component';
 
 
 
@@ -50,6 +53,9 @@ import { CreateReportComponent } from './reports/create-report/create-report.com
     ReportTableComponent,
     FormweComponent,
     CreateReportComponent,
+    BestfoodComponent,
+    CreatebestComponent,
+    CardfoodComponent,
 
   ],
   imports: [

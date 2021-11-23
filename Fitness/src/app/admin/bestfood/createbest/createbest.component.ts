@@ -10,7 +10,7 @@ import { BestfoodsService } from 'src/app/services/bestfoods.service';
 export class CreatebestComponent implements OnInit {
 
   formGroup =new FormGroup({
-    Title:new FormControl('',Validators.required),//c#
+    Title:new FormControl('',Validators.required),
     Descriptions:new FormControl('',Validators.required),
     ImageFood:new FormControl(''),
     Subtitle:new FormControl('',Validators.required)
@@ -27,7 +27,7 @@ export class CreatebestComponent implements OnInit {
   
   saveItem(){
     debugger
-    this.title2=this.formGroup.value.Title;//c#
+    this.title2=this.formGroup.value.Title;
     this.descr=this.formGroup.value.Descriptions;
     this.imgfo=this.formGroup.value.ImageFood;
     this.subt=this.formGroup.value.Subtitle;
