@@ -21,8 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import { NavComponent } from './components/nav/nav.component';
 
-import { NavComponent } from './nav/nav.component';
 
 
 
@@ -57,6 +57,7 @@ import { NavComponent } from './nav/nav.component';
     MatTabsModule,
     MatDialogModule,
     MatSelectModule
+    
 
   ],
   exports:[
@@ -80,7 +81,8 @@ import { NavComponent } from './nav/nav.component';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    NavComponent
     ]
 
   

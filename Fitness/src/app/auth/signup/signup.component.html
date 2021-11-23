@@ -1,3 +1,5 @@
+<app-nav></app-nav>
+<div style="margin-top: 80px;">
 <div class="signup-form">
 	<form [formGroup]="formGroup">
 		<h2>Sign Up</h2>
@@ -98,5 +100,6 @@
 			<button type="submit" [disabled]="!formGroup.valid"  class="btn btn-primary btn-lg" (click)="saveItem()">Sign Up</button>
 		</div>
 	</form>
-	<div class="hint-text">Already have an account? <a (click)="goToSignIn()"  >Login here</a></div>
+	<div class="hint-text">Already have an account? <a (click)="goToSignIn()" style="cursor: pointer;"  >Login here</a></div>
+</div>
 </div>
