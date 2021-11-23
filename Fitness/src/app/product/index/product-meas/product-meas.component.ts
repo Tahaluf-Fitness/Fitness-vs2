@@ -64,7 +64,7 @@ export class ProductMeasComponent implements OnInit {
     }
     this.productS.createMeasurement(this.productS.measurementData);
     localStorage.setItem('measurementData',JSON.stringify(this.productS.measurementData))
-    this.productS.counter.next(1)
+    window.location.reload()
 
   }
   

@@ -38,7 +38,6 @@ export class LayoutComponent implements OnInit {
   goToDiets(){
 
       this.router.navigate(['client/diet'])
- 
 
   }
 
@@ -56,4 +55,15 @@ export class LayoutComponent implements OnInit {
  },300); 
 
   }
+
+  goToHome(){
+    this.router.navigate([''])
+
+  }
+
+  goToDiet(){
+    this.router.navigate(['diet'])
+  }
+
+  
 }

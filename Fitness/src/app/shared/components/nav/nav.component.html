@@ -10,6 +10,8 @@
                           <ul class="nav">
                             <li class="scroll-to-section"><a (click)='goToHome()' class="active" style="cursor: pointer;">Home</a></li>
                             <li class="scroll-to-section"><a (click)='goToAboutUs()' style="cursor: pointer;">About</a></li>
+                            <li class="scroll-to-section"><a (click)='goToBestFood()'  style="cursor: pointer;">Best Food</a></li>
+
                             <li *ngIf="authS.isLoggedIn()" class="scroll-to-section" style="cursor: pointer;"><a (click)='goToDashboard()'>Dashboard</a></li>
                             <li class="scroll-to-section"><a (click)='goToDiet()'style="cursor: pointer;">Generate Diet</a></li>
       
