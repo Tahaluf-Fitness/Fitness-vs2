@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminprofileComponent } from './adminprofile/adminprofile.component';
+import { BestfoodComponent } from './bestfood/bestfood.component';
 import { DietcategoryComponent } from './dietcategory/dietcategory.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { MessageComponent } from './message/message.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path:'',component:AdminprofileComponent
   },
+  {path:'best',component:BestfoodComponent},
   {
     path:'users-reports',component:DietcategoryComponent
   },
