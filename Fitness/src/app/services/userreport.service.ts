@@ -13,6 +13,7 @@ export class UserreportService {
 
   data :any =[{}]
   data2 :any =[{}]
+  selectDiet:any=[{}]
 
 
   constructor(private spiner:NgxSpinnerService,private router:Router,private http:HttpClient,public authS:AuthService,private toastr:ToastrService,private dialog:MatDialog) { }
@@ -41,6 +42,23 @@ export class UserreportService {
     })
   
    }
+
+   getDietByUserEmail(email:string){
+    this.spiner.show();
+    this.http.get('https://localhost:44303/api/userReports/search/'+email).subscribe((data:any)=>{       
+      this.selectDiet=data;
+      console.log(this.selectDiet);
+      debugger
+      this.data2=this.selectDiet;
+      this.router.navigate(['admin/users-reports']);
+      this.spiner.hide();
+
+    },err=>{
+      this.spiner.hide();
+      this.toastr.error(err.status);
+    })
+
+  }
 
   
 

@@ -78,14 +78,12 @@ export class ReportsService {
         this.data=this.selectDiet;
         this.router.navigate(['admin/all-reports']);
 
-        debugger
         this.spiner.hide();
   
       },err=>{
         this.spiner.hide();
         this.toastr.error(err.status);
       })
-      debugger
 
     }
 
