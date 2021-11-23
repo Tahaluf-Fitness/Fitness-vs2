@@ -50,7 +50,7 @@ export class IndexComponent implements OnInit {
   }
 
   addPayment(){
-    if(this.authS.isLoggedIn() && localStorage.getItem("measurementData") != null && localStorage.getItem("paymentData") == null){
+    if(this.authS.isLoggedIn() && this.checkMeasurement != null && this.checkPayment == null){
       this.dialog.open(PaymentComponent)
     } 
     if(!this.authS.isLoggedIn()){
@@ -68,11 +68,18 @@ export class IndexComponent implements OnInit {
   data:any=[{}]
   currentDate=new Date()
   id:number=0
+
   getUserID(){
     if(localStorage.getItem('token')!=null){
       this.id=this.authS.getCurrentUser()
     }
   }
+
+   counter = [{
+    "num": 0
+ }]
+  setCounter=localStorage.setItem('setCounter',JSON.stringify(this.counter))
+  getCounter=localStorage.getItem('setCounter')
 
   generateDiet(){
       const obj=localStorage.getItem('measurementData')
@@ -81,6 +88,7 @@ export class IndexComponent implements OnInit {
         const obj2=JSON.parse(obj)
         bmi=obj2.bmi
       }
+     
 
     if(this.authS.isLoggedIn() && this.checkMeasurement != null && this.checkPayment != null){
       
@@ -90,8 +98,9 @@ export class IndexComponent implements OnInit {
           DietReportID:1,
           UserID:this.id
         }
-        console.log(this.data)
-        this.ReportS.createUserReport(this.data);
+
+     
+        this.ReportS.createUserReport(this.data);       
         const path = "../../../assets/doc/Underweight.pdf";
         window.open(path);
       }
@@ -101,9 +110,11 @@ export class IndexComponent implements OnInit {
           DietReportID:2,
           UserID:this.id
         }
+       
         this.ReportS.createUserReport(this.data);
         const path = "../../../assets/doc/Optimal.pdf";
         window.open(path);
+        window.location.reload()
       }
       if(bmi>=25 && bmi<=30){
         this.data={
@@ -111,20 +122,23 @@ export class IndexComponent implements OnInit {
           DietReportID:3,
           UserID:this.id
         }
-        this.ReportS.createUserReport(this.data);
+       
+        this.ReportS.createUserReport(this.data)  
+      
         const path = "../../../assets/doc/Overweight.pdf";
         window.open(path);
+        window.location.reload()
       }
       if( bmi>30){
         this.data={
           ReportDate:this.currentDate,
           DietReportID:4,
           UserID:this.id
-        }
-        this.ReportS.createUserReport(this.data);
+        }        
+        this.ReportS.createUserReport(this.data);  
         const path = "../../../assets/doc/Obese.pdf";
         window.open(path);
-      }
+        window.location.reload()
       
     }
     if(this.checkMeasurement == null && this.authS.isLoggedIn()){
@@ -140,11 +154,8 @@ export class IndexComponent implements OnInit {
 
     }
   }
+}
   
-  // <a download="schedule-bg" target="_blank" href="../../../assets/images/schedule-bg.jpg" style="cursor: pointer;"> 
-  //           Download
-  //         </a>
-
   goToSignUp(){
       this.router.navigate(['security/signup']);     
   }
