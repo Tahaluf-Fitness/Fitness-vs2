@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
   }
   goToBestFood(){
-    this.router.navigate(['admin/best'])
+    this.router.navigate(['bestfood'])
   }
 
   goToDashboard(){
@@ -44,9 +44,7 @@ export class NavbarComponent implements OnInit {
   goToAboutUs(){
    this.router.navigate(['aboutus'])
   }
-  goTobestfood(){
-    this.router.navigate(['bestfood'])
-  }
+  
 
   goToLogin(){
   this.router.navigate(['security/login'])
