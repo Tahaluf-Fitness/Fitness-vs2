@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { BestfoodRoutingModule } from './bestfood-routing.module';
 import { IndexComponent } from './index/index.component';
 import { SharedModule } from '../shared/shared.module';
+import { CardComponent } from './index/card/card.component';
 
 
 
 @NgModule({
   declarations: [
-    IndexComponent
+    IndexComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

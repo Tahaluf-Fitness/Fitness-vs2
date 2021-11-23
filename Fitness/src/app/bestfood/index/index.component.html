@@ -1,2 +1,4 @@
 <app-nav></app-nav>
-
+<app-card *ngFor="let card of bestfood.data" [BestFoodId]="card.BestFoodId" [title]="card.title"
+[description]="card.description" [Imagefood]="card.Imagefood" [subtitle]="card.subtitle"></app-card>
+<app-footer></app-footer>
