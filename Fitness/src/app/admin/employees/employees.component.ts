@@ -27,6 +27,10 @@ addEmployee(){
 
 }
 
+searchEmployeeByFirstname(e:any){
+  this.userS.searchEmployeeByFirstname(e.target.value);
+}
+
    
 
    

@@ -13,6 +13,8 @@ export class UsersService {
 
   data :any =[{}]
   data2 :any =[{}]
+  selectUser:any=[{}]
+  selectEmployee:any=[{}]
 
 
   constructor(private spiner:NgxSpinnerService,private router:Router,private http:HttpClient,public authS:AuthService,private toastr:ToastrService,private dialog:MatDialog) { }
@@ -61,8 +63,35 @@ export class UsersService {
        this.spiner.hide();
        this.toastr.error('Not Created');
     
-      })
+      })  
+}
 
-    
+searchUserByFirstname(firstname:string){
+  this.spiner.show();
+  this.http.get('https://localhost:44303/api/user/search/'+firstname).subscribe((data:any)=>{       
+    this.selectUser=data;
+    this.data=this.selectUser;
+    this.router.navigate(['admin/users']);
+    this.spiner.hide();
+
+  },err=>{
+    this.spiner.hide();
+    this.toastr.error(err.status);
+  })
+
+}
+
+searchEmployeeByFirstname(firstname:string){
+  this.spiner.show();
+  this.http.get('https://localhost:44303/api/user/search1/'+firstname).subscribe((data:any)=>{       
+    this.selectEmployee=data;
+    this.data2=this.selectEmployee;
+    this.router.navigate(['admin/emp']);
+    this.spiner.hide();
+  },err=>{
+    this.spiner.hide();
+    this.toastr.error(err.status);
+  })
+
 }
 }
