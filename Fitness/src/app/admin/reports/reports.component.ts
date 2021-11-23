@@ -22,7 +22,6 @@ export class ReportsComponent implements OnInit {
 
   GetData(e:any){
     this.reportS.getDietByCategory(e.target.value);
-    debugger
   }
 
 }

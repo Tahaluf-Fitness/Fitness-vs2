@@ -21,4 +21,8 @@ export class DietcategoryComponent implements OnInit {
     this.userReportS.GetAllUserReports()
   }
 
+  getDietByUserEmail(e:any){
+    this.userReportS.getDietByUserEmail(e.target.value);
+  }
+
 }
